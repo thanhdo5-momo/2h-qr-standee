@@ -1,260 +1,1588 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Customer 2H – User Walk-In</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --pink: #ff6ab4;
-      --hot-pink: #ff2d78;
-      --blue: #3fa3ff;
-      --purple: #7c5dff;
-      --text: #1a1b2f;
-      --muted: #4a4c64;
-      --border: #ffd8ef;
-      --bg: #fff9fd;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      padding: 24px;
-    }
-    .flyer {
-      max-width: 900px;
-      margin: 0 auto 48px;
-      background: #fff;
-      border-radius: 36px;
-      overflow: hidden;
-      box-shadow: 0 25px 70px rgba(121, 97, 135, 0.2);
-    }
-    .hero {
-      position: relative;
-      height: 380px;
-      overflow: hidden;
-    }
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .cloud-wave {
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      width: 100%;
-      height: 150px;
-      background:
-        radial-gradient(circle at 10% 40%, #fff 0 70px, transparent 75px),
-        radial-gradient(circle at 45% 30%, #fff 0 70px, transparent 75px),
-        radial-gradient(circle at 80% 45%, #fff 0 65px, transparent 70px),
-        radial-gradient(circle at 20% 110%, rgba(255,255,255,0.8) 0 80px, transparent 90px);
-      background-color: #bfe2ff;
-      border-top-left-radius: 150% 130px;
-      border-top-right-radius: 150% 130px;
-      border: 4px solid rgba(59, 120, 255, 0.25);
-      border-bottom: none;
-    }
-    .cloud-wave::after {
-      content: '';
-      position: absolute;
-      inset: 18px 22px auto 22px;
-      height: 70%;
-      border: 2px dashed rgba(71, 99, 255, 0.4);
-      border-top-left-radius: 120% 120px;
-      border-top-right-radius: 120% 120px;
-      border-bottom: none;
-    }
-    .content {
-      padding: 160px 60px 60px;
-      position: relative;
-      margin-top: -120px;
-    }
-    h1 {
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin: 0;
-    }
-    h2 {
-      margin: 6px auto 18px;
-      text-align: center;
-      font-size: clamp(1.5rem, 4vw, 2.4rem);
-      font-weight: 600;
-      color: var(--pink);
-    }
-    .tagline {
-      text-align: center;
-      font-size: 1.05rem;
-      font-weight: 500;
-      margin-bottom: 30px;
-      color: var(--muted);
-    }
-    .info-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto 36px;
-      max-width: 520px;
-    }
-    .info-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-      margin: 6px 0;
-      color: var(--muted);
-    }
-    .info-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--purple));
-      color: #fff;
-      font-size: 0.95rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .highlight-card {
-      border: 3px solid var(--border);
-      border-radius: 32px;
-      padding: 28px;
-      margin-bottom: 30px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-    }
-    .highlight-card h3 {
-      color: var(--pink);
-      margin-top: 0;
-      font-size: 1.25rem;
-    }
-    .highlight-card p {
-      margin: 10px 0 26px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 16px;
-    }
-    .tips {
-      border-top: 2px dashed #ffd0ea;
-      padding-top: 24px;
-    }
-    .tips h3 {
-      margin: 0 0 14px;
-      font-size: 1.2rem;
-      color: var(--text);
-    }
-    .tips ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 18px;
-    }
-    .tips li {
-      margin-bottom: 10px;
-      padding-left: 32px;
-      position: relative;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-    .tips li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--hot-pink);
-      font-weight: 600;
-    }
-    .cta {
-      text-align: center;
-      margin: 36px 0 20px;
-    }
-    .cta a {
-      display: inline-block;
-      padding: 16px 48px;
-      background: linear-gradient(120deg, var(--pink), var(--hot-pink));
-      color: #fff;
-      font-weight: 600;
-      border-radius: 999px;
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      box-shadow: 0 10px 25px rgba(255, 72, 126, 0.35);
-    }
-    .footer {
-      background: #ffe1f3;
-      padding: 32px 40px;
-      border-top: 3px solid #ff8fd6;
-      text-align: center;
-      font-weight: 600;
-      color: #b34b86;
-      letter-spacing: 0.03em;
-    }
-    @media (max-width: 640px) {
-      .content { padding: 140px 24px 40px; }
-      .highlight-card { padding: 24px; }
-    }
-  </style>
-</head>
-<body>
-  <article class="flyer">
-    <div class="hero">
-      <img src="assets/user-walkin-group.jpg" alt="Managers meet with users">
-      <div class="cloud-wave" aria-hidden="true"></div>
-    </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Customer 2 Hours (2H) Program</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600&display=swap");
 
-    <div class="content">
-      <h1>CUSTOMER 2 HOURS</h1>
-      <h2>Ra mắt User Walk-In</h2>
-      <p class="tagline">“Hẹn hò” với user ngay tại văn phòng, sao không thử?</p>
+      :root {
+        --bg: #fff9f3;
+        --bg-alt: #fff3e2;
+        --bg-section: #ffffff;
+        --accent: #ff6b4a;
+        --accent-soft: rgba(255, 107, 74, 0.12);
+        --accent-2: #2fb7b1;
+        --text: #1f120c;
+        --text-muted: #6f5545;
+        --border-subtle: rgba(31, 18, 12, 0.12);
+        --shadow-soft: 0 18px 40px rgba(255, 107, 74, 0.14);
+        --radius-lg: 18px;
+        --radius-xl: 26px;
+        --radius-pill: 999px;
+        --nav-height: 70px;
+      }
 
-      <ul class="info-list">
-        <li><span class="info-icon">🗓</span>Thứ 5 hằng tuần (13, 20, 27/11)</li>
-        <li><span class="info-icon">📍</span>Văn phòng MoMo</li>
-        <li><span class="info-icon">👥</span>Dành cho Managers+ trong hành trình Customer 2H</li>
-      </ul>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-      <section class="highlight-card">
-        <h3>Thấu hiểu thực tế + tiện lợi</h3>
-        <p>Customer 2H “triệu hồi” users về “nhà” MoMo cho anh chị bóc trần. Hình thức trao đổi trực tiếp cùng user theo nhóm 4 Managers+ mở ra cơ hội đào sâu thấu cảm và phát hiện insight theo gu của team mình.</p>
-        <div class="gallery">
-          <img src="assets/lounge.jpg" alt="Customer 2H lounge">
-          <img src="assets/sofa.jpg" alt="Collaboration area">
-          <img src="assets/workshop.jpg" alt="Workshop room">
+      body {
+        margin: 0;
+        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(circle at 12% 18%, #ffeeda 0, #fffaf4 30%),
+          radial-gradient(circle at 78% 12%, #e5f7ff 0, #fff7ef 35%),
+          linear-gradient(160deg, #fff7ef 0%, #f3e7ff 50%, #fffaf0 100%);
+        color: var(--text);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
+      }
+
+      /* Navbar */
+
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(16px);
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.95),
+          rgba(255, 247, 239, 0.9),
+          rgba(255, 247, 239, 0.7)
+        );
+        border-bottom: 1px solid rgba(31, 18, 12, 0.08);
+      }
+
+      .navbar-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+
+      .brand-badge {
+        width: 30px;
+        height: 30px;
+        border-radius: 12px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          #fff,
+          #ffb88c 55%,
+          #2fb7b1 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #1f120c;
+        font-weight: 800;
+        box-shadow: 0 10px 25px rgba(255, 107, 74, 0.26);
+      }
+
+      .brand span {
+        opacity: 0.8;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-link {
+        padding: 6px 10px;
+        border-radius: 999px;
+        color: var(--text-muted);
+        transition: all 0.15s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+
+      .nav-link:hover {
+        color: var(--text);
+        border-color: rgba(31, 18, 12, 0.12);
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .nav-link.active {
+        color: var(--text);
+        border-color: rgba(255, 107, 74, 0.5);
+        background: var(--accent-soft);
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .btn {
+        border-radius: var(--radius-pill);
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        background: transparent;
+        color: var(--text);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.18s ease;
+        box-shadow: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #ff9f2f, #ff6b4a);
+        color: #fff;
+        box-shadow: 0 14px 30px rgba(255, 107, 74, 0.3);
+        border: none;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 36px rgba(255, 107, 74, 0.36);
+      }
+
+      .btn-ghost {
+        border-color: rgba(31, 18, 12, 0.12);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.95);
+        border-color: rgba(31, 18, 12, 0.18);
+      }
+
+      .btn span.icon {
+        font-size: 15px;
+      }
+
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        color: var(--text);
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      /* Hero */
+
+      .hero {
+        padding: 80px 0 40px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.1fr);
+        gap: 50px;
+        align-items: center;
+      }
+
+      .hero-eyebrow {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        color: var(--accent-2);
+        margin-bottom: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .hero-eyebrow-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, #fff, #ffc857);
+        box-shadow: 0 0 20px rgba(255, 200, 87, 0.65);
+      }
+
+      .hero-title {
+        font-size: clamp(2.4rem, 4vw, 3.2rem);
+        line-height: 1.05;
+        margin-bottom: 16px;
+        font-family: "Space Grotesk", "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+
+      .hero-title span.highlight {
+        background: linear-gradient(120deg, #ff9f2f, #ff6b4a, #2fb7b1);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+        color: var(--text-muted);
+        margin-bottom: 22px;
+        max-width: 480px;
+      }
+
+      .hero-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 26px;
+      }
+
+      .pill {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(31, 18, 12, 0.08);
+        color: var(--text-muted);
+        background: rgba(255, 255, 255, 0.86);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .pill .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 10px rgba(255, 107, 74, 0.4);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .hero-note {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .hero-card {
+        background: linear-gradient(150deg, #ffffff 0%, #fff1df 60%, #ffe3d6 100%);
+        border-radius: var(--radius-xl);
+        padding: 20px 20px 18px;
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-card-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-muted);
+      }
+
+      .hero-timer {
+        font-size: 26px;
+        font-weight: 600;
+      }
+
+      .hero-timer span.unit {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-left: 6px;
+        color: var(--text-muted);
+      }
+
+      .hero-meter {
+        margin: 12px 0 18px;
+      }
+
+      .meter-track {
+        width: 100%;
+        height: 9px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.85);
+        overflow: hidden;
+        border: 1px solid rgba(31, 18, 12, 0.1);
+      }
+
+      .meter-fill {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #2fb7b1, #ff9f2f, #ff6b4a);
+        width: 68%;
+        box-shadow: 0 0 18px rgba(255, 107, 74, 0.3);
+        transition: width 0.6s ease-out;
+      }
+
+      .hero-card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+
+      .hero-chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .chip {
+        font-size: 11px;
+        padding: 5px 9px;
+        border-radius: 999px;
+        border: 1px solid rgba(31, 18, 12, 0.12);
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--text);
+      }
+
+      .chip strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      .floating-badge {
+        position: absolute;
+        right: 10px;
+        bottom: -12px;
+        transform: translateY(-40%);
+        background: linear-gradient(120deg, #2fb7b1, #ff9f2f, #ff6b4a);
+        border-radius: 22px;
+        padding: 8px 14px;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 16px 34px rgba(255, 107, 74, 0.28);
+        color: #fff;
+      }
+
+      .floating-badge span.icon {
+        font-size: 14px;
+      }
+
+      /* Sections */
+
+      section {
+        padding: 40px 0 20px;
+        scroll-margin-top: 80px;
+      }
+
+      .section-header {
+        margin-bottom: 20px;
+      }
+
+      .section-eyebrow {
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        color: var(--accent-2);
+        margin-bottom: 8px;
+      }
+
+      .section-title {
+        font-size: 22px;
+        margin-bottom: 6px;
+      }
+
+      .section-subtitle {
+        font-size: 14px;
+        color: var(--text-muted);
+        max-width: 580px;
+      }
+
+      /* Why section */
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+        gap: 26px;
+      }
+
+      .card {
+        background: linear-gradient(135deg, #ffffff 0%, #fff1dd 70%);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-subtle);
+        padding: 18px 18px 16px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .card h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      .card p {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+
+      .key-points {
+        margin-top: 14px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .key-point {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+
+      .key-point-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 999px;
+        border: 1px solid rgba(31, 18, 12, 0.14);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        margin-top: 1px;
+        background: rgba(255, 255, 255, 0.85);
+      }
+
+      .why-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .stat {
+        padding: 10px 10px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #fffef9, #ffeeda);
+        border: 1px solid var(--border-subtle);
+        text-align: left;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .stat-value {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .stat-label {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 3px;
+      }
+
+      /* Activities */
+
+      .activities-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 10px;
+      }
+
+      .activity-card {
+        position: relative;
+        padding: 14px 13px 13px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-subtle);
+        background: linear-gradient(140deg, #ffffff 0%, #fff2e0 70%);
+        box-shadow: var(--shadow-soft);
+        font-size: 13px;
+      }
+
+      .activity-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+      }
+
+      .activity-name {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .activity-body {
+        color: var(--text-muted);
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .activity-meta {
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+
+      .activity-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.86);
+        border: 1px solid rgba(31, 18, 12, 0.12);
+        font-size: 10px;
+        margin-top: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .badge-soon {
+        position: absolute;
+        top: 8px;
+        right: 9px;
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px dashed rgba(31, 18, 12, 0.14);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+      }
+
+      /* Platform roadmap */
+
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .roadmap-card {
+        padding: 14px 13px 13px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-subtle);
+        background: linear-gradient(140deg, #ffffff 0%, #fff3e4 70%);
+        font-size: 13px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .roadmap-year {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--accent-2);
+        margin-bottom: 5px;
+      }
+
+      .roadmap-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .roadmap-list {
+        font-size: 12px;
+        color: var(--text-muted);
+        padding-left: 16px;
+      }
+
+      .roadmap-list li {
+        margin-bottom: 5px;
+      }
+
+      /* Leaderboard */
+
+      .leaderboard {
+        margin-top: 10px;
+      }
+
+      .leaderboard-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        border: 1px solid var(--border-subtle);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .leaderboard-table th,
+      .leaderboard-table td {
+        text-align: left;
+        padding: 7px 8px;
+      }
+
+      .leaderboard-table thead {
+        background: rgba(255, 245, 236, 0.9);
+      }
+
+      .leaderboard-table tbody tr:nth-child(odd) {
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .leaderboard-table tbody tr:nth-child(even) {
+        background: rgba(255, 245, 236, 0.7);
+      }
+
+      .leaderboard-table th {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text);
+      }
+
+      .leader-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(47, 183, 177, 0.12);
+        border: 1px solid rgba(47, 183, 177, 0.5);
+        color: #1f7c76;
+      }
+
+      /* Testimonials */
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 10px;
+      }
+
+      .testimonial-card {
+        padding: 14px 13px 13px;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(135deg, #ffffff 0%, #f5f0ff 70%);
+        border: 1px solid var(--border-subtle);
+        font-size: 13px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .testimonial-quote {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+      }
+
+      .testimonial-name {
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .testimonial-role {
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+
+      /* Metrics */
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .metric-card {
+        padding: 12px 11px 11px;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(135deg, #ffffff, #fff1df);
+        border: 1px solid var(--border-subtle);
+        text-align: left;
+        font-size: 13px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .metric-value {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+
+      .metric-label {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      .metric-hint {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 3px;
+      }
+
+      /* Getting started */
+
+      .steps {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .step-card {
+        padding: 12px 11px 11px;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(135deg, #ffffff, #fef0de 75%);
+        border: 1px solid var(--border-subtle);
+        font-size: 13px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .step-number {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(31, 18, 12, 0.12);
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        margin-bottom: 5px;
+      }
+
+      .step-title {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      .step-body {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      /* Feedback & footer */
+
+      .feedback-card {
+        margin-top: 10px;
+        padding: 14px 13px 13px;
+        border-radius: var(--radius-lg);
+        background: linear-gradient(135deg, #ffffff, #fff0e1 70%);
+        border: 1px solid var(--border-subtle);
+        font-size: 13px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .feedback-links {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      footer {
+        margin-top: 26px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border-subtle);
+        font-size: 11px;
+        color: var(--text-muted);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .footer-tagline {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 10px;
+      }
+
+      /* Responsive */
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+          padding-top: 60px;
+        }
+
+        .hero-visual {
+          order: -1;
+        }
+
+        .why-grid,
+        .activities-grid,
+        .roadmap-grid,
+        .metrics-grid,
+        .steps,
+        .testimonials-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links,
+        .nav-actions {
+          display: none;
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+
+        .nav-mobile-open .nav-links,
+        .nav-mobile-open .nav-actions {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding-top: 8px;
+        }
+
+        .navbar-inner {
+          flex-wrap: wrap;
+        }
+
+        .hero {
+          padding-top: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-title {
+          font-size: 2.1rem;
+        }
+
+        .hero-card {
+          padding: 16px 14px 14px;
+        }
+
+        .leaderboard-table th:nth-child(3),
+        .leaderboard-table td:nth-child(3) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-inner">
+        <div class="brand">
+          <div class="brand-badge">2H</div>
+          <div>
+            <div>Customer 2 Hours</div>
+            <span>Customer-first leadership ritual</span>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+        <nav class="nav-links">
+          <a href="#why" class="nav-link active">Why</a>
+          <a href="#activities" class="nav-link">Activities</a>
+          <a href="#platform" class="nav-link">Platform</a>
+          <a href="#leaders" class="nav-link">Leaderboard</a>
+          <a href="#start" class="nav-link">Get Started</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn btn-ghost" onclick="scrollToSection('start')">
+            <span class="icon">▶</span>
+            Watch intro
+          </button>
+          <button class="btn btn-primary" onclick="scrollToSection('start')">
+            <span class="icon">✨</span>
+            Join Customer 2H
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            Company-wide Customer 2 Hours Program
+          </div>
+          <h1 class="hero-title">
+            Turn <span class="highlight">2 hours</span> a month into real
+            customer empathy.
+          </h1>
+          <p class="hero-subtitle">
+            Customer 2H makes “Customer First” a measurable habit. Every
+            Manager+ spends at least 120 minutes each month listening to,
+            observing, and talking to real users.
+          </p>
+
+          <div class="hero-pills">
+            <div class="pill">
+              <span class="dot"></span>
+              120 min / month / manager
+            </div>
+            <div class="pill">
+              <span class="dot"></span>
+              5 customer-facing activities
+            </div>
+            <div class="pill">
+              <span class="dot"></span>
+              Platform, tracking, recognition
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToSection('start')">
+              Start my 2H this month
+              <span class="icon">→</span>
+            </button>
+            <button
+              class="btn btn-ghost"
+              onclick="scrollToSection('activities')">
+              Explore activities
+            </button>
+          </div>
+
+          <p class="hero-note">
+            One platform. Five ways to meet your customers. Countless insights.
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span>Manager+ Dashboard</span>
+              <span>Live this month</span>
+            </div>
+            <div class="hero-timer">
+              78<span class="unit">minutes logged</span>
+            </div>
+
+            <div class="hero-meter">
+              <div class="meter-track">
+                <div class="meter-fill" id="meter-fill"></div>
+              </div>
+            </div>
+
+            <div class="hero-card-footer">
+              <span>Goal: 120 minutes</span>
+              <span style="font-size: 12px">65% to target</span>
+            </div>
+
+            <div class="hero-chip-row">
+              <div class="chip"><strong>Immersion</strong> • 45 min</div>
+              <div class="chip"><strong>CS shadowing</strong> • 20 min</div>
+              <div class="chip"><strong>CEE report</strong> • 13 min</div>
+            </div>
+
+            <div class="floating-badge">
+              <span class="icon">👑</span>
+              <span>
+                You’re #3 in your department<br />
+                <strong>Keep listening</strong>
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="tips">
-        <h3>Bí kíp tham gia User Walk-In</h3>
-        <ul>
-          <li>Book trước profile user hợp gu tại platform.</li>
-          <li>Một mình hơi buồn, tag ngay đồng đội cùng đi với 4 slots/session.</li>
-          <li>Ghi âm & note findings nộp platform – 2H chốt thời lượng theo audio upload!</li>
-        </ul>
-        <p>User không ngại đường xa đến thăm nhà, say NO với “leo cây” và khám phá hết nấc nha!</p>
+      <!-- Why -->
+      <section id="why">
+        <div class="section-header">
+          <div class="section-eyebrow">Why Customer 2H</div>
+          <h2 class="section-title">Make empathy a leadership KPI.</h2>
+          <p class="section-subtitle">
+            Technology and pricing can be copied. A deep understanding of
+            customers cannot. Customer 2H turns frontline listening into a
+            monthly ritual for every Manager+.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div>
+            <div class="card">
+              <h3>From slogans to habits</h3>
+              <p>
+                “Customer First” only matters if leaders spend real time with
+                real users. Customer 2H guarantees at least 120 minutes of
+                direct exposure every month – across live calls, in-person
+                immersion, and CS conversations.
+              </p>
+
+              <div class="key-points">
+                <div class="key-point">
+                  <div class="key-point-icon">⏱</div>
+                  <div>
+                    120 minutes per month per Manager+ in structured, trackable
+                    customer activities.
+                  </div>
+                </div>
+                <div class="key-point">
+                  <div class="key-point-icon">👂</div>
+                  <div>
+                    Go beyond dashboards – hear users’ words, emotions, and
+                    workarounds first-hand.
+                  </div>
+                </div>
+                <div class="key-point">
+                  <div class="key-point-icon">➡</div>
+                  <div>
+                    Every session creates evidence (notes, audio, video) that
+                    flows into CIO for synthesis and action.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <h3>What success looks like</h3>
+              <p>
+                By building a company-wide habit now, we accelerate stronger
+                products, healthier journeys, and a culture where customer voice
+                is non-negotiable.
+              </p>
+              <div class="why-metrics">
+                <div class="stat">
+                  <div class="stat-value">100%</div>
+                  <div class="stat-label">Managers on 120 min/month</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">30%+</div>
+                  <div class="stat-label">Insights turned into actions</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">4.0★</div>
+                  <div class="stat-label">Internal satisfaction with CX</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <div class="cta">
-        <a href="#book-now">KHÁM PHÁ NGAY</a>
-      </div>
-    </div>
+      <!-- Activities -->
+      <section id="activities">
+        <div class="section-header">
+          <div class="section-eyebrow">Activities</div>
+          <h2 class="section-title">
+            One program. Five ways to meet customers.
+          </h2>
+          <p class="section-subtitle">
+            Choose any combination of activities to complete your 120 minutes
+            each month. Mix in-person time, call listening, and insight reviews
+            depending on your focus.
+          </p>
+        </div>
 
-    <footer class="footer">
-      Customer 2H · Để tầm nhìn của Managers chạm đến tim users
-    </footer>
-  </article>
-</body>
+        <div class="activities-grid">
+          <article class="activity-card">
+            <div class="activity-label">Activity 01</div>
+            <div class="activity-name">User Immersion</div>
+            <p class="activity-body">
+              Visit customers where they live or work. Observe how they use our
+              products, how they pay, what they struggle with – and capture
+              those moments.
+            </p>
+            <p class="activity-meta">
+              Attendance: based on uploaded audio/video duration.<br />
+              Output: at least 3 key findings + evidence.
+            </p>
+            <div class="activity-tag">
+              <span>🏠</span> In-field, deep context
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-label">Activity 02</div>
+            <div class="activity-name">CS Shadowing</div>
+            <p class="activity-body">
+              Sit with Customer Support (onsite or via Meet). Watch how real
+              tickets are handled, where users get stuck, and how our systems
+              behave under stress.
+            </p>
+            <p class="activity-meta">
+              Attendance: 30 minutes per session.<br />
+              Output: 3 key findings per shadowing slot.
+            </p>
+            <div class="activity-tag">
+              <span>🎧</span> Live tickets in action
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-label">Activity 03</div>
+            <div class="activity-name">CS Audio Review</div>
+            <p class="activity-body">
+              Listen to recorded inbound calls across low, medium, and high
+              emotion levels. Build emotional stamina by hearing unfiltered
+              praise, confusion, and complaints.
+            </p>
+            <p class="activity-meta">
+              Attendance: duration of calls listened (max 30 mins/month).
+            </p>
+            <div class="activity-tag">
+              <span>🎙</span> Unfiltered customer voice
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-label">Activity 04</div>
+            <div class="activity-name">CEE Weekly Report</div>
+            <p class="activity-body">
+              Review CIO’s weekly Customer Experience & Emotion report. Spot
+              patterns, hot issues, and what actions are already in motion.
+            </p>
+            <p class="activity-meta">
+              Attendance: 30 minutes per report (limit 1 per month).
+            </p>
+            <div class="activity-tag">
+              <span>📊</span> Trend & insight pulse
+            </div>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-label">Activity 05</div>
+            <div class="activity-name">Customer Video Call</div>
+            <span class="badge-soon">Coming soon</span>
+            <p class="activity-body">
+              Join moderated 1:1 or small-group video calls with customers from
+              your target segments. Ask, listen, and co-create solutions live
+              from your desk.
+            </p>
+            <p class="activity-meta">
+              Attendance: based on call duration and uploaded recording.
+            </p>
+            <div class="activity-tag"><span>💻</span> Remote face-to-face</div>
+          </article>
+
+          <article class="activity-card">
+            <div class="activity-label">Your month</div>
+            <div class="activity-name">Design your 120 minutes</div>
+            <p class="activity-body">
+              Mix activities that fit your product and schedule. The platform
+              tracks your minutes, evidence, and how insights translate into
+              action.
+            </p>
+            <p class="activity-meta">
+              Need ideas? CIO can suggest a “playlist” of activities tailored to
+              your squad or business line.
+            </p>
+            <div class="activity-tag">
+              <span>🧩</span> Flexible combinations
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Platform -->
+      <section id="platform">
+        <div class="section-header">
+          <div class="section-eyebrow">Platform Roadmap</div>
+          <h2 class="section-title">
+            From monthly ritual to full Customer Experience Platform.
+          </h2>
+          <p class="section-subtitle">
+            Customer 2H is the first step in a 3-stage roadmap – from simple
+            tracking to a connected Customer Experience Platform that links
+            Voice → Action → Outcome.
+          </p>
+        </div>
+
+        <div class="roadmap-grid">
+          <article class="roadmap-card">
+            <div class="roadmap-year">Stage 1 · 2025</div>
+            <div class="roadmap-title">Habit & Tracking</div>
+            <ul class="roadmap-list">
+              <li>Web MVP for Customer 2H activities & attendance.</li>
+              <li>Personal dashboard for minutes, streaks, and goals.</li>
+              <li>Gamification: badges, points, and team leaderboards.</li>
+              <li>Simple evidence upload (notes, audio, photos).</li>
+            </ul>
+          </article>
+
+          <article class="roadmap-card">
+            <div class="roadmap-year">Stage 2 · 2025–2026</div>
+            <div class="roadmap-title">CIO Operations Hub</div>
+            <ul class="roadmap-list">
+              <li>Central hub for all qualitative activities.</li>
+              <li>Scheduling, participant management, and QC workflow.</li>
+              <li>Standardized templates and tagging of insights.</li>
+              <li>Cross-team visibility on who’s meeting which customers.</li>
+            </ul>
+          </article>
+
+          <article class="roadmap-card">
+            <div class="roadmap-year">Stage 3 · 2026+</div>
+            <div class="roadmap-title">Customer Experience Platform (CXP)</div>
+            <ul class="roadmap-list">
+              <li>Integrated with CRM, ticketing, product analytics.</li>
+              <li>Insight-to-Action tracking and Product Health dashboards.</li>
+              <li>
+                Alerts, subscriptions, and social features (like, vote,
+                comment).
+              </li>
+              <li>End-to-end view from customer voice to business outcome.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Leaders -->
+      <section id="leaders">
+        <div class="section-header">
+          <div class="section-eyebrow">Recognition</div>
+          <h2 class="section-title">
+            Customer 2H Champions & Leadership Board.
+          </h2>
+          <p class="section-subtitle">
+            Every month, we celebrate the leaders who go above and beyond in
+            meeting customers, closing the loop, and turning insights into
+            change.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="leaderboard">
+            <table class="leaderboard-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Leader</th>
+                  <th>Department</th>
+                  <th>Minutes</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboard-body">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="voices">
+        <div class="section-header">
+          <div class="section-eyebrow">Leadership Voices</div>
+          <h2 class="section-title">
+            What leaders say about CIO & customer insight.
+          </h2>
+          <p class="section-subtitle">
+            The Customer Insight Office (CIO) underpins Customer 2H with
+            research design, synthesis, and clear storytelling – so leaders can
+            move from insight to action.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              “CIO’s reports are very good and impressive. We’ll leverage these
+              insights into action immediately.”
+            </p>
+            <div class="testimonial-name">Ms. Vũ Hương Thảo</div>
+            <div class="testimonial-role">
+              Head of Brand & Marketing – Growth & Marketing
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              “I need all development projects to get CIO involved. Any project
+              without CIO will immediately see product leaks.”
+            </p>
+            <div class="testimonial-name">Ms. Lương Kim Thanh</div>
+            <div class="testimonial-role">
+              Head of Social Payment – Payment Services
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              “I’m very impressed with the research design, insight synthesis,
+              accountability, and adaptability to campaign objectives.”
+            </p>
+            <div class="testimonial-name">Mr. Lê Thế Huy</div>
+            <div class="testimonial-role">
+              Growth Director – Growth & Marketing
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              “CIO’s reports are very detailed and useful. Teams should
+              reference them more when planning growth initiatives.”
+            </p>
+            <div class="testimonial-name">Ms. Nguyễn Linh Trang</div>
+            <div class="testimonial-role">
+              Director – Payment & Daily Life Service Business
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Metrics -->
+      <section id="metrics">
+        <div class="section-header">
+          <div class="section-eyebrow">Program KPIs</div>
+          <h2 class="section-title">
+            Track customer empathy like any other metric.
+          </h2>
+          <p class="section-subtitle">
+            Customer 2H includes a compliance and gamification layer so we can
+            see where customer time is strong – and where we need to support
+            teams more.
+          </p>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">Manager+ with 120 min/month</div>
+            <div class="metric-hint">
+              Goal: full coverage across all business centers.
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-value">30%+</div>
+            <div class="metric-label">Insights converted into actions</div>
+            <div class="metric-hint">
+              Tracked via CIO’s Insight-to-Action pipeline and product squads.
+            </div>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-value">4.0★</div>
+            <div class="metric-label">Internal satisfaction score</div>
+            <div class="metric-hint">
+              Measured via periodic surveys on 2H and CX initiatives.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Get Started -->
+      <section id="start">
+        <div class="section-header">
+          <div class="section-eyebrow">Get Started</div>
+          <h2 class="section-title">
+            Ready to start your Customer 2H journey?
+          </h2>
+          <p class="section-subtitle">
+            It only takes a few clicks to book your first activity. The rest is
+            simply showing up, listening well, and sharing what you learn.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-title">Sign in to the 2H platform</div>
+            <p class="step-body">
+              Access the Customer 2H portal using your company account. View
+              your monthly target, streak, and open activities.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-title">Book your activities</div>
+            <p class="step-body">
+              Choose a mix of immersion, CS shadowing, audio reviews, and CEE
+              reports that align with your role, product, and roadmap.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-title">Capture & submit insights</div>
+            <p class="step-body">
+              Upload notes and evidence directly to CIO. Your insights feed into
+              the Operations Hub and future CXP dashboards.
+            </p>
+          </article>
+        </div>
+
+        <div
+          style="margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap">
+          <button class="btn btn-primary">
+            Join Customer 2H now
+            <span class="icon">→</span>
+          </button>
+          <button class="btn btn-ghost" onclick="scrollToSection('activities')">
+            View activity guidelines
+          </button>
+        </div>
+      </section>
+
+      <!-- Feedback -->
+      <section id="feedback">
+        <div class="section-header">
+          <div class="section-eyebrow">Feedback & Support</div>
+          <h2 class="section-title">Help us improve Customer 2H.</h2>
+          <p class="section-subtitle">
+            The program itself is a learning system. Share what works, what
+            doesn’t, and what you’d like to see next.
+          </p>
+        </div>
+
+        <div class="feedback-card">
+          <div>
+            <p>
+              Share your experience with Customer 2H so we can keep iterating on
+              the platform, formats, and support materials.
+            </p>
+          </div>
+          <div class="feedback-links">
+            <button class="btn btn-ghost">
+              <span class="icon">📝</span>
+              Submit feedback form
+            </button>
+            <button class="btn btn-ghost">
+              <span class="icon">✉</span>
+              Email: customer2h@mservice.com.vn
+            </button>
+          </div>
+        </div>
+
+        <footer>
+          <div class="footer-tagline">
+            Connecting customers · Inspiring insights · Operational excellence
+          </div>
+          <div>Customer 2H Program · Powered by CIO</div>
+        </footer>
+      </section>
+    </main>
+
+    <script>
+      // Smooth scroll helper for buttons
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // Mobile nav toggle
+      const navbar = document.querySelector(".navbar");
+      const navToggle = document.querySelector(".nav-toggle");
+
+      navToggle.addEventListener("click", () => {
+        navbar.classList.toggle("nav-mobile-open");
+      });
+
+      // Active nav link on scroll
+      const sections = document.querySelectorAll("main section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      function onScroll() {
+        const scrollPos = window.scrollY;
+        let currentId = "top";
+
+        sections.forEach((sec) => {
+          const offsetTop = sec.offsetTop - 90;
+          if (scrollPos >= offsetTop) {
+            currentId = sec.id;
+          }
+        });
+
+        navLinks.forEach((link) => {
+          const hrefId = link.getAttribute("href").replace("#", "");
+          if (hrefId === currentId) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", onScroll);
+
+      // Sample leaderboard data
+      const leaderboardData = [
+        {
+          rank: 1,
+          name: "Nguyễn A",
+          dept: "Payments & Daily Life",
+          minutes: 186,
+          champion: true,
+        },
+        {
+          rank: 2,
+          name: "Trần B",
+          dept: "Growth & Marketing",
+          minutes: 164,
+        },
+        {
+          rank: 3,
+          name: "Lê C",
+          dept: "Product Platform",
+          minutes: 152,
+        },
+        {
+          rank: 4,
+          name: "Phạm D",
+          dept: "Risk & Compliance",
+          minutes: 138,
+        },
+        {
+          rank: 5,
+          name: "Hoàng E",
+          dept: "Partnerships",
+          minutes: 130,
+        },
+      ];
+
+      const leaderboardBody = document.getElementById("leaderboard-body");
+      leaderboardData.forEach((row) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        <td>${row.rank}</td>
+        <td>${row.champion ? "👑 " : ""}${row.name}</td>
+        <td>${row.dept}</td>
+        <td>${row.minutes} min</td>
+        <td>${
+          row.champion ? '<span class="leader-tag">2H Champion</span>' : ""
+        }</td>
+      `;
+        leaderboardBody.appendChild(tr);
+      });
+
+      // Simple entry animation for the meter
+      window.addEventListener("load", () => {
+        const meter = document.getElementById("meter-fill");
+        // Trigger reflow
+        void meter.offsetWidth;
+        meter.style.width = "68%";
+      });
+    </script>
+  </body>
 </html>
