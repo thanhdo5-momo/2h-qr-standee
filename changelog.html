@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customer 2H – Change Log</title>
+    <link rel="icon" type="image/png" href="./icon.png" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
@@ -58,15 +59,16 @@
     <!-- Nav -->
     <nav id="header" class="fixed w-full z-30 top-0 text-white">
       <div
-        class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0">
         <div class="pl-4 flex items-center">
           <a
-            class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-3xl"
+            class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-3xl flex items-center gap-3"
             href="index.html#top">
-            <span class="bg-white text-pink-600 rounded-lg px-2 py-1 mr-2"
-              >2H</span
-            >
-            Customer 2 Hours
+            <img
+              src="./logo.png"
+              alt="Customer 2 Hours logo"
+              class="h-12 md:h-16 w-auto rounded-lg" />
+            <span class="leading-tight">Customer 2H</span>
           </a>
         </div>
         <div class="block lg:hidden pr-4">
@@ -88,14 +90,14 @@
           <ul class="list-reset lg:flex justify-end flex-1 items-center">
             <li class="mr-3">
               <a
-                class="inline-block py-2 px-4 text-black font-bold no-underline"
-                href="index.html"
+                class="inline-block py-2 px-4 text-black no-underline"
+                href="index.html#top"
                 >About</a
               >
             </li>
             <li class="mr-3">
               <a
-                class="inline-block py-2 px-4 text-black no-underline"
+                class="inline-block py-2 px-4 text-black font-bold no-underline"
                 href="changelog.html"
                 >Change Log</a
               >
@@ -105,7 +107,7 @@
             id="navAction"
             class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-3 px-6 shadow opacity-90 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
             href="index.html#start">
-            Join 2H
+            Subscribe
           </a>
         </div>
       </div>
@@ -113,7 +115,7 @@
     </nav>
 
     <!-- Hero -->
-    <div class="pt-24 hero-bg text-white">
+    <div id="top" class="pt-24 hero-bg text-white">
       <div
         class="container px-4 mx-auto flex flex-col items-start hero-content py-12">
         <p class="uppercase tracking-widest text-sm opacity-90">What changed</p>
@@ -259,24 +261,35 @@
         </div>
       </section>
 
-      <section class="bg-gray-50 py-12">
-        <div class="container max-w-5xl mx-auto px-4 soft-card rounded-2xl p-6">
-          <div
-            class="flex flex-wrap items-center justify-between gap-3 text-gray-700">
-            <div class="uppercase tracking-widest text-xs text-pink-600">
-              Connecting customers · Inspiring insights · Operational excellence
-            </div>
-            <div>Customer 2H Program · Powered by CIO</div>
+      <footer class="bg-gray-50 pt-10 pb-0 text-gray-700">
+        <div
+          class="container max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
+          <div class="uppercase tracking-widest text-xs text-pink-600">
+            Connecting customers · Inspiring insights · Better operations
           </div>
+          <div>Customer 2H Program · Powered by CIO</div>
+        </div>
+        <div class="mt-4">
           <img
             src="./FOOTER.png"
             alt="Customer 2H footer graphic"
-            class="mt-4 w-full rounded-xl" />
+            class="w-full"
+            style="
+              width: 100vw;
+              margin-left: calc(50% - 50vw);
+              margin-right: calc(50% - 50vw);
+            " />
         </div>
-      </section>
+      </footer>
     </main>
 
     <script>
+      // Smooth scroll helper
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
       // Nav toggle behaviour
       var navMenuDiv = document.getElementById("nav-content");
       var navMenu = document.getElementById("nav-toggle");

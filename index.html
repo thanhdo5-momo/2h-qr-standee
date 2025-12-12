@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customer 2 Hours (2H) Program</title>
+    <title>Customer 2 Hours Program</title>
+    <link rel="icon" type="image/png" href="./icon.png" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
@@ -55,6 +56,13 @@
         position: relative;
         z-index: 1;
       }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
       .footer-wrap {
         position: relative;
         background: linear-gradient(
@@ -72,15 +80,16 @@
     <!-- Nav -->
     <nav id="header" class="fixed w-full z-30 top-0 text-white">
       <div
-        class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0">
         <div class="pl-4 flex items-center">
           <a
-            class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-3xl"
+            class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-3xl flex items-center gap-3"
             href="#top">
-            <span class="bg-white text-pink-600 rounded-lg px-2 py-1 mr-2"
-              >2H</span
-            >
-            Customer 2 Hours
+            <img
+              src="./logo.png"
+              alt="Customer 2 Hours logo"
+              class="h-12 md:h-16 w-auto rounded-lg" />
+            <span class="leading-tight">Customer 2H</span>
           </a>
         </div>
         <div class="block lg:hidden pr-4">
@@ -117,8 +126,8 @@
           <button
             id="navAction"
             class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-3 px-6 shadow opacity-90 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-            onclick="scrollToSection('start')">
-            Join 2H
+            onclick="scrollToSection('metrics')">
+            Subscribe
           </button>
         </div>
       </div>
@@ -128,20 +137,20 @@
     <!-- Hero -->
     <div id="top" class="pt-24 pb-16 hero-bg text-white">
       <div
-        class="container px-4 mx-auto flex flex-wrap flex-col md:flex-row items-center hero-content">
+        class="container px-4 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center gap-8 hero-content">
         <div
-          class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+          class="flex flex-col w-full md:w-1/2 justify-center items-center text-center">
           <p class="tracking-widest text-sm w-full opacity-90">
-            An initiative by Customer Intelligence Office (CIO)
+            From the Customer Intelligence Office (CIO)
           </p>
           <h1 class="my-4 text-4xl md:text-5xl font-bold leading-tight">
-            2 hours a month. Real customer empathy.
+            2 hours a month. Listen for real.
           </h1>
           <p class="leading-relaxed text-lg mb-6 opacity-90">
-            Customer 2H makes “Customer First” a measurable habit: 120 minutes
-            of customer time for every Manager+ each month.
+            Customer 2H turns “Customer First” into a habit: 120 minutes with
+            users every month for Manager+.
           </p>
-          <div class="flex flex-wrap gap-3 mb-6">
+          <div class="flex flex-wrap gap-3 mb-6 justify-center">
             <span
               class="bg-white text-pink-700 rounded-full px-4 py-2 text-sm font-semibold shadow">
               120 min / month
@@ -154,52 +163,6 @@
               class="bg-white text-pink-700 rounded-full px-4 py-2 text-sm font-semibold shadow">
               Track & celebrate
             </span>
-          </div>
-        </div>
-        <div class="w-full md:w-3/5 py-6 text-center">
-          <div class="soft-card rounded-2xl text-gray-800 mx-auto max-w-xl p-6">
-            <div
-              class="flex items-center justify-between text-sm text-gray-500">
-              <span>Manager+ Dashboard</span><span>Live this month</span>
-            </div>
-            <div class="text-4xl font-bold mt-2 text-pink-600">
-              78
-              <span class="text-sm font-semibold text-gray-500"
-                >minutes logged</span
-              >
-            </div>
-            <div class="w-full bg-pink-100 rounded-full h-3 my-4">
-              <div
-                class="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-300 h-3 rounded-full"
-                style="width: 68%"></div>
-            </div>
-            <div
-              class="flex items-center justify-between text-sm text-gray-500">
-              <span>Goal: 120 minutes</span><span>65% to target</span>
-            </div>
-            <div class="flex flex-wrap gap-2 mt-4 text-sm">
-              <span
-                class="px-3 py-2 rounded-full bg-pink-50 text-pink-700 font-semibold"
-                >Immersion • 45 min</span
-              >
-              <span
-                class="px-3 py-2 rounded-full bg-pink-50 text-pink-700 font-semibold"
-                >CS shadowing • 20 min</span
-              >
-              <span
-                class="px-3 py-2 rounded-full bg-pink-50 text-pink-700 font-semibold"
-                >CEE report • 13 min</span
-              >
-            </div>
-            <div
-              class="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-pink-300 text-white shadow">
-              <span>👑</span>
-              <span class="text-sm leading-tight"
-                >You’re #3 in your department<br /><strong
-                  >Keep listening</strong
-                ></span
-              >
-            </div>
           </div>
         </div>
       </div>
@@ -215,25 +178,23 @@
           <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
           <div class="grid md:grid-cols-2 gap-8 mt-8">
             <div class="soft-card rounded-2xl p-6">
-              <h3 class="text-2xl font-semibold mb-3">
-                From slogans to habits
-              </h3>
+              <h3 class="text-2xl font-semibold mb-3">From slogan to habit</h3>
               <p class="text-gray-600 mb-5">
-                “Customer First” becomes real when leaders meet customers every
-                month.
+                “Customer First” counts only when leaders meet customers
+                monthly.
               </p>
               <ul class="space-y-3 text-gray-600">
                 <li class="flex gap-3">
-                  <span class="text-pink-600">⏱</span>120 minutes of direct
-                  customer time.
+                  <span class="text-pink-600">⏱</span>120 minutes with
+                  customers.
                 </li>
                 <li class="flex gap-3">
-                  <span class="text-pink-600">👂</span>Listen, watch, and feel
-                  real experiences.
+                  <span class="text-pink-600">👂</span>Listen, watch, feel real
+                  use.
                 </li>
                 <li class="flex gap-3">
-                  <span class="text-pink-600">➡</span>Capture notes, audio,
-                  video as evidence.
+                  <span class="text-pink-600">➡</span>Keep notes, audio, or
+                  video as proof.
                 </li>
               </ul>
             </div>
@@ -242,8 +203,8 @@
                 What success looks like
               </h3>
               <p class="text-gray-600 mb-4">
-                Stronger products, healthier journeys, and a culture where
-                customer voice sticks.
+                Better products, smoother journeys, and a culture that hears
+                customers.
               </p>
               <div class="grid grid-cols-3 gap-4 text-center">
                 <div class="p-4 rounded-xl bg-pink-50">
@@ -270,189 +231,66 @@
 
       <!-- Activities -->
       <section id="activities" class="bg-gray-50 py-12 border-b">
-        <div class="container max-w-6xl mx-auto px-4">
+        <div class="container max-w-8xl mx-auto px-4">
           <h2 class="text-4xl font-bold text-center">
             One program. Five ways to meet customers.
           </h2>
-          <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
-          <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-            Pick any mix to hit your 120 minutes: in-field, calls, reports, or
-            remote chats.
-          </p>
-          <div class="grid md:grid-cols-3 gap-6">
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Activity 01
-              </p>
+          <div class="h-1 mx-auto gradient w-32 opacity-25 my-8 rounded"></div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="soft-card rounded-2xl p-5 overflow-hidden">
+              <img
+                src="./activity/user_immersion.png"
+                alt="User Immersion"
+                class="w-full h-auto object-contain rounded-xl mb-4" />
               <h3 class="text-xl font-semibold mt-1">User Immersion</h3>
               <p class="text-gray-600 mt-2">
-                Visit customers where they live or work. Observe how they use
-                our products, how they pay, what they struggle with – and
-                capture those moments.
+                Meet customers where they are. Watch how they use and pay, and
+                capture the moments.
               </p>
-              <p class="text-sm text-gray-600 mt-2">
-                Attendance: based on uploaded audio/video duration. Output: at
-                least 3 key findings + evidence.
-              </p>
-              <span
-                class="inline-flex mt-3 px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                >🏠 In-field, deep context</span
-              >
             </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Activity 02
-              </p>
+            <article class="soft-card rounded-2xl p-5 overflow-hidden">
+              <img
+                src="./activity/cs_shadowing.png"
+                alt="CS Shadowing"
+                class="w-full h-auto object-contain rounded-xl mb-4" />
               <h3 class="text-xl font-semibold mt-1">CS Shadowing</h3>
               <p class="text-gray-600 mt-2">
-                Sit with Customer Support (onsite or via Meet). Watch how real
-                tickets are handled, where users get stuck, and how our systems
-                behave under stress.
+                Sit with Customer Support. See real tickets, stuck points, and
+                system behavior.
               </p>
-              <p class="text-sm text-gray-600 mt-2">
-                Attendance: 30 minutes per session. Output: 3 key findings per
-                shadowing slot.
-              </p>
-              <span
-                class="inline-flex mt-3 px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                >🎧 Live tickets in action</span
-              >
             </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Activity 03
-              </p>
+            <article class="soft-card rounded-2xl p-5 overflow-hidden">
+              <img
+                src="./activity/cs_audio.png"
+                alt="CS Audio Review"
+                class="w-full h-auto object-contain rounded-xl mb-4" />
               <h3 class="text-xl font-semibold mt-1">CS Audio Review</h3>
               <p class="text-gray-600 mt-2">
-                Listen to recorded inbound calls across low, medium, and high
-                emotion levels. Build emotional stamina by hearing unfiltered
-                praise, confusion, and complaints.
+                Listen to recorded calls across emotions. Hear praise,
+                confusion, complaints.
               </p>
-              <p class="text-sm text-gray-600 mt-2">
-                Attendance: duration of calls listened (max 30 mins/month).
-              </p>
-              <span
-                class="inline-flex mt-3 px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                >🎙 Unfiltered customer voice</span
-              >
             </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Activity 04
-              </p>
+            <article class="soft-card rounded-2xl p-5 overflow-hidden">
+              <img
+                src="./activity/cee_report.png"
+                alt="CEE Weekly Report"
+                class="w-full h-auto object-contain rounded-xl mb-4" />
               <h3 class="text-xl font-semibold mt-1">CEE Weekly Report</h3>
               <p class="text-gray-600 mt-2">
-                Review CIO’s weekly Customer Experience & Emotion report. Spot
-                patterns, hot issues, and what actions are already in motion.
+                Read CIO’s weekly Customer Experience & Emotion report. Spot
+                patterns and actions.
               </p>
-              <p class="text-sm text-gray-600 mt-2">
-                Attendance: 30 minutes per report (limit 1 per month).
-              </p>
-              <span
-                class="inline-flex mt-3 px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                >📊 Trend & insight pulse</span
-              >
             </article>
-            <article class="soft-card rounded-2xl p-5 relative">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Activity 05
-              </p>
-              <h3 class="text-xl font-semibold mt-1">Customer Video Call</h3>
-              <span
-                class="absolute top-4 right-4 text-xs px-2 py-1 border border-pink-200 rounded-full text-pink-600"
-                >Coming soon</span
-              >
+            <article class="soft-card rounded-2xl p-5 relative overflow-hidden">
+              <img
+                src="./activity/user_walk_in.png"
+                alt="Customer Video Call"
+                class="w-full h-auto object-contain rounded-xl mb-4" />
+              <h3 class="text-xl font-semibold mt-1">User Walk In</h3>
               <p class="text-gray-600 mt-2">
-                Join moderated 1:1 or small-group video calls with customers
-                from your target segments. Ask, listen, and co-create solutions
-                live from your desk.
+                Join moderated video calls with target customers. Ask, listen,
+                co-create.
               </p>
-              <p class="text-sm text-gray-600 mt-2">
-                Attendance: based on call duration and uploaded recording.
-              </p>
-              <span
-                class="inline-flex mt-3 px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                >💻 Remote face-to-face</span
-              >
-            </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Your month
-              </p>
-              <h3 class="text-xl font-semibold mt-1">
-                Design your 120 minutes
-              </h3>
-              <p class="text-gray-600 mt-2">
-                Mix activities that fit your product and schedule. The platform
-                tracks your minutes, evidence, and how insights translate into
-                action.
-              </p>
-              <p class="text-sm text-gray-600 mt-2">
-                Need ideas? CIO can suggest a “playlist” of activities tailored
-                to your squad or business line.
-              </p>
-              <span
-                class="inline-flex mt-3 px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                >🧩 Flexible combinations</span
-              >
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Platform Roadmap -->
-      <section id="platform" class="bg-white py-12 border-b">
-        <div class="container max-w-6xl mx-auto px-4">
-          <h2 class="text-4xl font-bold text-center">
-            From monthly ritual to full Customer Experience Platform
-          </h2>
-          <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
-          <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-            Three simple stages: track, coordinate, then connect voice to
-            action.
-          </p>
-          <div class="grid md:grid-cols-3 gap-6">
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Stage 1 · 2025
-              </p>
-              <h3 class="text-xl font-semibold mt-1">Habit & Tracking</h3>
-              <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-                <li>Web MVP for Customer 2H activities & attendance.</li>
-                <li>Personal dashboard for minutes, streaks, and goals.</li>
-                <li>Gamification: badges, points, and team leaderboards.</li>
-                <li>Simple evidence upload (notes, audio, photos).</li>
-              </ul>
-            </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Stage 2 · 2025–2026
-              </p>
-              <h3 class="text-xl font-semibold mt-1">CIO Operations Hub</h3>
-              <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-                <li>Central hub for all qualitative activities.</li>
-                <li>Scheduling, participant management, and QC workflow.</li>
-                <li>Standardized templates and tagging of insights.</li>
-                <li>Cross-team visibility on who’s meeting which customers.</li>
-              </ul>
-            </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-xs uppercase tracking-widest text-pink-600">
-                Stage 3 · 2026+
-              </p>
-              <h3 class="text-xl font-semibold mt-1">
-                Customer Experience Platform
-              </h3>
-              <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-                <li>Integrated with CRM, ticketing, product analytics.</li>
-                <li>
-                  Insight-to-Action tracking and Product Health dashboards.
-                </li>
-                <li>Alerts, subscriptions, and social features.</li>
-                <li>
-                  End-to-end view from customer voice to business outcome.
-                </li>
-              </ul>
             </article>
           </div>
         </div>
@@ -460,50 +298,170 @@
 
       <!-- Testimonials -->
       <section id="voices" class="bg-white py-12 border-b">
-        <div class="container max-w-6xl mx-auto px-4">
+        <div class="container max-w-8xl mx-auto px-4">
           <h2 class="text-4xl font-bold text-center">
             Leadership voices on CIO & customer insight
           </h2>
           <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
-          <div class="grid md:grid-cols-2 gap-6">
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-gray-700 mb-3">
-                “CIO’s reports are sharp and action-ready.”
-              </p>
-              <div class="font-semibold text-pink-700">Ms. Vũ Hương Thảo</div>
-              <div class="text-sm text-gray-600">
-                Head of Brand & Marketing – Growth & Marketing
-              </div>
-            </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-gray-700 mb-3">
-                “Every build needs CIO involved or we see leaks.”
-              </p>
-              <div class="font-semibold text-pink-700">Ms. Lương Kim Thanh</div>
-              <div class="text-sm text-gray-600">
-                Head of Social Payment – Payment Services
-              </div>
-            </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-gray-700 mb-3">
-                “Strong research design and clear synthesis.”
-              </p>
-              <div class="font-semibold text-pink-700">Mr. Lê Thế Huy</div>
-              <div class="text-sm text-gray-600">
-                Growth Director – Growth & Marketing
-              </div>
-            </article>
-            <article class="soft-card rounded-2xl p-5">
-              <p class="text-gray-700 mb-3">
-                “Detailed reports teams rely on when planning.”
-              </p>
-              <div class="font-semibold text-pink-700">
-                Ms. Nguyễn Linh Trang
-              </div>
-              <div class="text-sm text-gray-600">
-                Director – Payment & Daily Life Service Business
-              </div>
-            </article>
+          <div class="relative max-w-8xl mx-auto">
+            <button
+              id="voices-prev"
+              class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white shadow absolute left-0 top-1/2 transform -translate-y-1/2 border border-pink-200 text-pink-600 hover:bg-pink-50 focus:outline-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div
+              id="voices-carousel"
+              class="flex gap-6 overflow-x-auto no-scrollbar py-2 px-2 md:px-12">
+              <article
+                class="soft-card rounded-3xl overflow-hidden flex flex-col md:flex-row bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                style="
+                  min-width: 320px;
+                  width: calc(50% - 12px);
+                  max-width: 640px;
+                ">
+                <div class="md:w-2/3 p-6 md:p-8 flex flex-col gap-3">
+                  <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+                      Anh Nguyễn Bá Diệp
+                    </h3>
+                    <p class="text-pink-600 font-semibold">
+                      Co Founder - Senior Vice President
+                    </p>
+                  </div>
+                  <p class="text-gray-700 leading-relaxed">
+                    Sau khi tham gia case sự cố khiếu nại, tự thấy nếu mình là
+                    khách hàng sẽ không bao giờ quay lại sử dụng dịch vụ. Chúng
+                    ta có thể rút kinh nghiệm trong việc xây dựng lại cấu trúc
+                    của app, cũng như cần phải bổ sung, xây dựng thêm niềm tin
+                    của khách hàng vào MoMo.
+                  </p>
+                </div>
+                <div class="md:w-1/3">
+                  <img
+                    src="./user_feedback/6.png"
+                    alt="Sample Name 1"
+                    class="w-full h-full object-cover" />
+                </div>
+              </article>
+              <article
+                class="soft-card rounded-3xl overflow-hidden flex flex-col md:flex-row bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                style="
+                  min-width: 320px;
+                  width: calc(50% - 12px);
+                  max-width: 640px;
+                ">
+                <div class="md:w-2/3 p-6 md:p-8 flex flex-col gap-3">
+                  <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+                      Anh Đỗ Quang Thuận
+                    </h3>
+                    <p class="text-pink-600 font-semibold">
+                      Executive Vice Chairman & President
+                    </p>
+                  </div>
+                  <p class="text-gray-700 leading-relaxed">
+                    Nên tham gia để khám phá nhiều vấn đề phức tạp và cách nhìn
+                    mà mình không nhận ra được, ví dụ tên gọi “đối tác MoMo” có
+                    hợp lý không khi họ tự nhận họ là người bán hàng? Từ việc
+                    branding kỹ hơn đến cải thiện Túi Thần Tài, Vay Nhanh, Quản
+                    lý bán hàng, Hóa đơn - cảm giác có nhiều thứ phải làm quá.
+                  </p>
+                </div>
+                <div class="md:w-1/3">
+                  <img
+                    src="./user_feedback/7.png"
+                    alt="Sample Name 2"
+                    class="w-full h-full object-cover" />
+                </div>
+              </article>
+              <article
+                class="soft-card rounded-3xl overflow-hidden flex flex-col md:flex-row bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                style="
+                  min-width: 320px;
+                  width: calc(50% - 12px);
+                  max-width: 640px;
+                ">
+                <div class="md:w-2/3 p-6 md:p-8 flex flex-col gap-3">
+                  <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+                      Anh Phạm Đức Huy
+                    </h3>
+                    <p class="text-pink-600 font-semibold">Manager - BMC</p>
+                  </div>
+                  <p class="text-gray-700 leading-relaxed">
+                    Gần dân – Thử dân – Vì dân. Cho dân coi trước, cho sếp duyệt
+                    sau - Cook trên màn hình ít thôi, mang tagline/concept ra
+                    test xem dân hiểu gì, thích gì, rớt chỗ nào (thường là rớt).
+                    Nếp mới của Huy: Đầu tuần làm cho xong, cuối tuần hỏi cho
+                    chắc.
+                  </p>
+                </div>
+                <div class="md:w-1/3">
+                  <img
+                    src="./user_feedback/8.png"
+                    alt="Sample Name 3"
+                    class="w-full h-full object-cover" />
+                </div>
+              </article>
+              <article
+                class="soft-card rounded-3xl overflow-hidden flex flex-col md:flex-row bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                style="
+                  min-width: 320px;
+                  width: calc(50% - 12px);
+                  max-width: 640px;
+                ">
+                <div class="md:w-2/3 p-6 md:p-8 flex flex-col gap-3">
+                  <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+                      Chị Trịnh Thu Ngọc
+                    </h3>
+                    <p class="text-pink-600 font-semibold">
+                      Senior Manager - Legal
+                    </p>
+                  </div>
+                  <p class="text-gray-700 leading-relaxed">
+                    Bất ngờ - Thú Vị - Học hỏi được nhiều. Mỗi lần gặp user là 1
+                    lần bất ngờ, cuộc sống thật đa dạng. Mình cũng sẽ hiểu hơn
+                    về cách nhìn và nhu cầu của user đối với các sản phẩm của
+                    chúng ta. Họ cũng có thể cho chúng ta các gợi ý về việc điều
+                    chỉnh/phát triển sản phẩm.
+                  </p>
+                </div>
+                <div class="md:w-1/3">
+                  <img
+                    src="./user_feedback/9.png"
+                    alt="Chị Trịnh Thu Ngọc"
+                    class="w-full h-full object-cover" />
+                </div>
+              </article>
+            </div>
+            <button
+              id="voices-next"
+              class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white shadow absolute right-0 top-1/2 transform -translate-y-1/2 border border-pink-200 text-pink-600 hover:bg-pink-50 focus:outline-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -516,15 +474,14 @@
           </h2>
           <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
           <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-            Compliance + simple gamification keep customer time visible and
-            on-target.
+            Compliance and light gamification keep customer time on target.
           </p>
           <div class="grid md:grid-cols-3 gap-6">
             <article class="soft-card rounded-2xl p-5 text-center">
               <div class="text-3xl font-bold text-pink-600">100%</div>
               <div class="text-gray-700 mt-1">Manager+ with 120 min/month</div>
               <div class="text-sm text-gray-500">
-                Goal: full coverage across all business centers.
+                Goal: full coverage across business centers.
               </div>
             </article>
             <article class="soft-card rounded-2xl p-5 text-center">
@@ -533,81 +490,136 @@
                 Insights converted into actions
               </div>
               <div class="text-sm text-gray-500">
-                Tracked via CIO’s Insight-to-Action pipeline.
+                Tracked via Insight-to-Action pipeline.
               </div>
             </article>
             <article class="soft-card rounded-2xl p-5 text-center">
               <div class="text-3xl font-bold text-pink-600">4.0★</div>
               <div class="text-gray-700 mt-1">Internal satisfaction score</div>
               <div class="text-sm text-gray-500">
-                Measured via periodic surveys on 2H and CX initiatives.
+                Measured via periodic surveys.
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Get Started -->
+      <!-- Subscribe -->
       <section id="start" class="bg-white py-12 border-b">
         <div class="container max-w-6xl mx-auto px-4">
           <h2 class="text-4xl font-bold text-center">
-            Ready to start your Customer 2H journey?
+            Subscribe to Customer 2H News
           </h2>
           <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
           <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
-            Book an activity, show up, listen well, upload what you learn.
+            Get updates on Customer 2H: new activities, customer stories, and
+            tips to listen better.
           </p>
-          <div class="grid md:grid-cols-3 gap-6">
-            <article class="soft-card rounded-2xl p-5 text-center">
-              <div
-                class="mx-auto w-10 h-10 rounded-full bg-pink-50 text-pink-700 flex items-center justify-center font-bold">
-                1
-              </div>
-              <h3 class="text-xl font-semibold mt-3">
-                Sign in to the 2H platform
-              </h3>
-              <p class="text-gray-600 mt-2">
-                View your monthly target, streak, and open activities.
-              </p>
-            </article>
-            <article class="soft-card rounded-2xl p-5 text-center">
-              <div
-                class="mx-auto w-10 h-10 rounded-full bg-pink-50 text-pink-700 flex items-center justify-center font-bold">
-                2
-              </div>
-              <h3 class="text-xl font-semibold mt-3">Book your activities</h3>
-              <p class="text-gray-600 mt-2">
-                Choose immersion, CS shadowing, audio reviews, and CEE reports
-                that fit your role.
-              </p>
-            </article>
-            <article class="soft-card rounded-2xl p-5 text-center">
-              <div
-                class="mx-auto w-10 h-10 rounded-full bg-pink-50 text-pink-700 flex items-center justify-center font-bold">
-                3
-              </div>
-              <h3 class="text-xl font-semibold mt-3">
-                Capture & submit insights
-              </h3>
-              <p class="text-gray-600 mt-2">
-                Upload notes and evidence directly to CIO. Insights feed into
-                the Operations Hub.
-              </p>
-            </article>
-          </div>
-          <div class="flex justify-center mt-8">
+          <form
+            id="subscribe-form"
+            class="max-w-2xl mx-auto flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <input
+              id="subscribe-email"
+              type="email"
+              required
+              placeholder="Enter your email"
+              class="w-full sm:flex-1 px-4 py-3 rounded-full border border-pink-100 focus:outline-none focus:ring-2 focus:ring-pink-300 text-gray-800" />
             <button
+              type="submit"
               class="bg-gradient-to-r from-pink-500 to-pink-400 text-white font-bold rounded-full py-3 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-              Join now
+              Subscribe
             </button>
+          </form>
+          <p class="text-center text-gray-500 text-sm mt-3">
+            We only send useful updates. Unsubscribe anytime.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="bg-white py-12 border-b">
+        <div class="container max-w-6xl mx-auto px-4">
+          <h2 class="text-4xl font-bold text-center text-pink-600">
+            Contact Us
+          </h2>
+          <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
+          <div class="soft-card bg-pink-50 rounded-3xl p-8 md:p-10 shadow-sm">
+            <div class="flex flex-col divide-y divide-pink-200">
+              <div class="flex flex-col md:flex-row gap-4 md:gap-6 pb-6">
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-blue-700 flex items-center justify-center text-blue-700">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-8 h-8 md:w-10 md:h-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h5l5 5v9a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-semibold text-gray-900">
+                    Your feedback matters
+                  </h3>
+                  <p class="text-gray-700 mt-2 leading-relaxed">
+                    Thanks for joining the pilot. Use the link to share your
+                    feedback.
+                  </p>
+                  <a
+                    href="#"
+                    class="text-pink-600 font-semibold underline mt-2 inline-block">
+                    Link here
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col md:flex-row gap-4 md:gap-6 pt-6">
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-blue-700 flex items-center justify-center text-blue-700">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-8 h-8 md:w-10 md:h-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-semibold text-gray-900">
+                    Email to us
+                  </h3>
+                  <p class="text-gray-700 mt-2 leading-relaxed">
+                    Questions or support? Email Customer 2H:
+                  </p>
+                  <a
+                    href="mailto:customer2h@mservice.com.vn"
+                    class="text-pink-600 font-semibold underline mt-2 inline-block">
+                    customer2h@mservice.com.vn
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <footer class="bg-gray-50 pt-10 pb-0 text-gray-700">
-        <div class="container max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
+        <div
+          class="container max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
           <div class="uppercase tracking-widest text-xs text-pink-600">
-            Connecting customers · Inspiring insights · Operational excellence
+            Connecting customers · Inspiring insights · Better operations
           </div>
           <div>Customer 2H Program · Powered by CIO</div>
         </div>
@@ -616,7 +628,11 @@
             src="./FOOTER.png"
             alt="Customer 2H footer graphic"
             class="w-full"
-            style="width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw)" />
+            style="
+              width: 100vw;
+              margin-left: calc(50% - 50vw);
+              margin-right: calc(50% - 50vw);
+            " />
         </div>
       </footer>
     </main>
@@ -697,22 +713,62 @@
       ];
 
       const leaderboardBody = document.getElementById("leaderboard-body");
-      leaderboardData.forEach((row) => {
-        const tr = document.createElement("tr");
-        tr.className = "border-b border-gray-100";
-        tr.innerHTML = `
-          <td class="py-3 px-4">${row.rank}</td>
-          <td class="py-3 px-4">${row.champion ? "👑 " : ""}${row.name}</td>
-          <td class="py-3 px-4">${row.dept}</td>
-          <td class="py-3 px-4">${row.minutes} min</td>
-          <td class="py-3 px-4">${
-            row.champion
-              ? '<span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-semibold">2H Champion</span>'
-              : ""
-          }</td>
-        `;
-        leaderboardBody.appendChild(tr);
-      });
+      if (leaderboardBody) {
+        leaderboardData.forEach((row) => {
+          const tr = document.createElement("tr");
+          tr.className = "border-b border-gray-100";
+          tr.innerHTML = `
+            <td class="py-3 px-4">${row.rank}</td>
+            <td class="py-3 px-4">${row.champion ? "👑 " : ""}${row.name}</td>
+            <td class="py-3 px-4">${row.dept}</td>
+            <td class="py-3 px-4">${row.minutes} min</td>
+            <td class="py-3 px-4">${
+              row.champion
+                ? '<span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-semibold">2H Champion</span>'
+                : ""
+            }</td>
+          `;
+          leaderboardBody.appendChild(tr);
+        });
+      }
+
+      // Voices manual scroll
+      const voicesCarousel = document.getElementById("voices-carousel");
+      const voicesPrev = document.getElementById("voices-prev");
+      const voicesNext = document.getElementById("voices-next");
+      if (voicesCarousel && voicesPrev && voicesNext) {
+        const getScrollAmount = () => {
+          const card = voicesCarousel.querySelector("article");
+          const gap = 24; // gap-6
+          const cardWidth = card ? card.getBoundingClientRect().width : 480;
+          return cardWidth + gap;
+        };
+        voicesPrev.addEventListener("click", () => {
+          voicesCarousel.scrollBy({
+            left: -getScrollAmount(),
+            behavior: "smooth",
+          });
+        });
+        voicesNext.addEventListener("click", () => {
+          voicesCarousel.scrollBy({
+            left: getScrollAmount(),
+            behavior: "smooth",
+          });
+        });
+      }
+
+      // Subscribe form toast
+      const subscribeForm = document.getElementById("subscribe-form");
+      const subscribeEmail = document.getElementById("subscribe-email");
+      const subscribeToast = document.getElementById("subscribe-toast");
+      if (subscribeForm && subscribeEmail) {
+        subscribeForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = subscribeEmail.value.trim();
+          alert(email ? `Thank you for subscribing, ${email}!` : "Thank you for subscribing!");
+          subscribeForm.reset();
+        });
+      }
     </script>
   </body>
 </html>
