@@ -30,6 +30,42 @@
         background: #ffffff;
         box-shadow: 0 12px 30px rgba(249, 83, 150, 0.08);
       }
+      .hero-bg {
+        position: relative;
+        background: linear-gradient(
+            120deg,
+            rgba(249, 83, 150, 0.82),
+            rgba(255, 157, 190, 0.78),
+            rgba(254, 200, 220, 0.75)
+          ),
+          url("./mainpage.png") center/cover no-repeat;
+      }
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.05) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+      .footer-wrap {
+        position: relative;
+        background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.9) 30%,
+            rgba(255, 255, 255, 0.85) 60%,
+            rgba(255, 255, 255, 0.9) 100%
+          ),
+          url("./FOOTER.png") center bottom / cover no-repeat;
+      }
     </style>
   </head>
   <body class="leading-normal tracking-normal gradient text-white min-h-screen">
@@ -67,36 +103,14 @@
             <li class="mr-3">
               <a
                 class="inline-block py-2 px-4 text-black font-bold no-underline"
-                href="#why"
-                >Why</a
+                >About</a
               >
             </li>
             <li class="mr-3">
               <a
                 class="inline-block py-2 px-4 text-black no-underline"
-                href="#activities"
-                >Activities</a
-              >
-            </li>
-            <li class="mr-3">
-              <a
-                class="inline-block py-2 px-4 text-black no-underline"
-                href="#platform"
-                >Roadmap</a
-              >
-            </li>
-            <li class="mr-3">
-              <a
-                class="inline-block py-2 px-4 text-black no-underline"
-                href="#leaders"
-                >Leaderboard</a
-              >
-            </li>
-            <li class="mr-3">
-              <a
-                class="inline-block py-2 px-4 text-black no-underline"
-                href="#start"
-                >Get Started</a
+                href="changelog.html"
+                >Change Log</a
               >
             </li>
           </ul>
@@ -112,13 +126,13 @@
     </nav>
 
     <!-- Hero -->
-    <div id="top" class="pt-24">
+    <div id="top" class="pt-24 pb-16 hero-bg text-white">
       <div
-        class="container px-4 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        class="container px-4 mx-auto flex flex-wrap flex-col md:flex-row items-center hero-content">
         <div
           class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-          <p class="uppercase tracking-widest text-sm w-full opacity-90">
-            Company-wide Customer 2 Hours Program
+          <p class="tracking-widest text-sm w-full opacity-90">
+            An initiative by Customer Intelligence Office (CIO)
           </p>
           <h1 class="my-4 text-4xl md:text-5xl font-bold leading-tight">
             2 hours a month. Real customer empathy.
@@ -140,18 +154,6 @@
               class="bg-white text-pink-700 rounded-full px-4 py-2 text-sm font-semibold shadow">
               Track & celebrate
             </span>
-          </div>
-          <div class="flex flex-wrap gap-3 w-full">
-            <button
-              class="mx-auto md:mx-0 bg-white text-gray-900 font-bold rounded-full py-3 px-6 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-              onclick="scrollToSection('start')">
-              Start my 2H this month
-            </button>
-            <button
-              class="mx-auto md:mx-0 border border-white text-white font-semibold rounded-full py-3 px-6 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-              onclick="scrollToSection('activities')">
-              Explore activities
-            </button>
           </div>
         </div>
         <div class="w-full md:w-3/5 py-6 text-center">
@@ -201,32 +203,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="relative -mt-12 lg:-mt-24">
-      <svg
-        class="wave-top"
-        viewBox="0 0 1428 174"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g
-            transform="translate(-2.000000, 44.000000)"
-            fill="#FFFFFF"
-            fill-rule="nonzero">
-            <path
-              d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
-              opacity="0.100000001"></path>
-            <path
-              d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
-              opacity="0.100000001"></path>
-            <path
-              d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
-              opacity="0.200000003"></path>
-          </g>
-        </g>
-      </svg>
     </div>
 
     <main class="bg-white text-gray-800" id="page">
@@ -619,74 +595,31 @@
               </p>
             </article>
           </div>
-          <div class="flex flex-wrap justify-center gap-4 mt-8">
+          <div class="flex justify-center mt-8">
             <button
               class="bg-gradient-to-r from-pink-500 to-pink-400 text-white font-bold rounded-full py-3 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-              Join Customer 2H now
-            </button>
-            <button
-              class="border border-pink-200 text-pink-700 font-semibold rounded-full py-3 px-8 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-              onclick="scrollToSection('activities')">
-              View activity guidelines
+              Join now
             </button>
           </div>
         </div>
       </section>
 
-      <!-- Feedback -->
-      <section id="feedback" class="bg-gray-50 py-12">
-        <div class="container max-w-6xl mx-auto px-4">
-          <div
-            class="soft-card rounded-2xl p-6 md:flex md:items-center md:justify-between">
-            <div class="text-gray-700">
-              <p class="text-xl font-semibold mb-1">
-                Help us improve Customer 2H.
-              </p>
-              <p class="text-gray-600">
-                Share what works, what doesn’t, and what you’d like to see next.
-              </p>
-            </div>
-            <div class="flex gap-3 mt-4 md:mt-0">
-              <button
-                class="bg-pink-500 text-white rounded-full px-5 py-3 font-semibold shadow hover:shadow-lg transform hover:scale-105">
-                📝 Submit feedback form
-              </button>
-              <a
-                class="border border-pink-200 text-pink-700 rounded-full px-5 py-3 font-semibold hover:shadow transform hover:scale-105"
-                href="mailto:customer2h@mservice.com.vn"
-                >✉ Email the team</a
-              >
-            </div>
+      <footer class="bg-gray-50 pt-10 pb-0 text-gray-700">
+        <div class="container max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
+          <div class="uppercase tracking-widest text-xs text-pink-600">
+            Connecting customers · Inspiring insights · Operational excellence
           </div>
-          <footer class="mt-8 bg-white rounded-2xl shadow p-6">
-            <div
-              class="flex flex-wrap items-center justify-between gap-3 text-gray-700">
-              <div class="uppercase tracking-widest text-xs text-pink-600">
-                Connecting customers · Inspiring insights · Operational
-                excellence
-              </div>
-              <div>Customer 2H Program · Powered by CIO</div>
-            </div>
-            <img
-              src="./FOOTER.png"
-              alt="Customer 2H footer graphic"
-              class="mt-4 w-full rounded-xl" />
-          </footer>
+          <div>Customer 2H Program · Powered by CIO</div>
         </div>
-      </section>
+        <div class="mt-4">
+          <img
+            src="./FOOTER.png"
+            alt="Customer 2H footer graphic"
+            class="w-full"
+            style="width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw)" />
+        </div>
+      </footer>
     </main>
-
-    <!-- Call to action strip -->
-    <section class="container mx-auto text-center py-10 text-white">
-      <h2 class="text-4xl font-bold mb-3">Call to Action</h2>
-      <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-2 rounded"></div>
-      <p class="text-xl">Keep customer time on the calendar, every month.</p>
-      <button
-        class="mx-auto bg-white text-gray-800 font-bold rounded-full my-6 py-3 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-        onclick="scrollToSection('start')">
-        Get Started
-      </button>
-    </section>
 
     <script>
       // Smooth scroll helper
