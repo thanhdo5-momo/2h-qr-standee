@@ -810,19 +810,34 @@
       footer {
         margin-top: 26px;
         padding-top: 16px;
-        border-top: 1px solid var(--border-subtle);
         font-size: 11px;
-        color: var(--text-muted);
+        color: var(--text);
+        border-top: 1px solid transparent;
+        border: 1px solid var(--border-subtle);
+        background: #fff;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .footer-inner {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 8px;
+        padding: 12px 14px 10px;
       }
 
       .footer-tagline {
         text-transform: uppercase;
         letter-spacing: 0.15em;
         font-size: 10px;
+      }
+
+      .footer-graphic {
+        display: block;
+        width: 100%;
+        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        margin-top: 10px;
       }
 
       /* Responsive */
@@ -1476,10 +1491,13 @@
         </div>
 
         <footer>
-          <div class="footer-tagline">
-            Connecting customers · Inspiring insights · Operational excellence
+          <div class="footer-inner">
+            <div class="footer-tagline">
+              Connecting customers · Inspiring insights · Operational excellence
+            </div>
+            <div>Customer 2H Program · Powered by CIO</div>
           </div>
-          <div>Customer 2H Program · Powered by CIO</div>
+          <img src="./FOOTER.png" alt="Customer 2H footer graphic" class="footer-graphic" />
         </footer>
       </section>
     </main>
