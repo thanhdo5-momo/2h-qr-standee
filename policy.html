@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customer 2H – Change Log</title>
+    <title>Customer 2H – Chính sách</title>
     <link rel="icon" type="image/png" href="./icon.png" />
     <link
       rel="stylesheet"
@@ -102,20 +102,18 @@
             </li>
             <li class="mr-3">
               <a
-                class="inline-block py-2 px-4 text-black no-underline"
+                class="inline-block py-2 px-4 text-black font-bold no-underline"
                 href="policy.html"
-                >Quy tắc</a
+                >Chính sách</a
               >
             </li>
-
             <li class="mr-3">
               <a
-                class="inline-block py-2 px-4 text-black font-bold no-underline"
+                class="inline-block py-2 px-4 text-black no-underline"
                 href="changelog.html"
                 >Changelog</a
               >
             </li>
-            <li></li>
           </ul>
           <button
             id="navAction"
@@ -132,135 +130,127 @@
     <div id="top" class="pt-24 hero-bg text-white">
       <div
         class="container px-4 mx-auto flex flex-col items-start hero-content py-12">
-        <p class="uppercase tracking-widest text-sm opacity-90">Có gì mới</p>
+        <p class="uppercase tracking-widest text-sm opacity-90">
+          Cập nhật Quy tắc Tham gia
+        </p>
         <h1 class="my-4 text-4xl md:text-5xl font-bold leading-tight">
-          Customer 2H Change log
+          Customer 2 Hours
         </h1>
         <p class="leading-relaxed text-lg opacity-90 max-w-2xl">
-          Cập nhật tính năng, cải tiến và sửa lỗi mới nhất của Customer 2H. Minh
-          bạch hành trình nâng trải nghiệm của bạn.
+          Nhằm mang lại trải nghiệm Chạm Đất tốt nhất cho anh/chị cùng Users,
+          Customer 2H xin thông tin các cập nhật mới trong quá trình tham gia
+          các hoạt động offline.
         </p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <span
+            class="px-3 py-1 rounded-full bg-white text-pink-700 text-xs font-semibold"
+            >Áp dụng từ 15/12/2025 & 19/12/2025</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white text-pink-700 text-xs font-semibold"
+            >Dành cho Manager+ tham gia Customer 2H</span
+          >
+        </div>
       </div>
     </div>
 
     <main class="bg-white text-gray-800">
-      <section class="container max-w-5xl mx-auto px-4 py-12">
-        <div class="flex items-center justify-between flex-wrap gap-3 mb-8">
-          <h2 class="text-3xl font-bold">Các cập nhật mới nhất</h2>
-          <span class="text-sm text-gray-500"
-            >Sắp xếp theo ngày (mới nhất)</span
-          >
+      <section class="container max-w-5xl mx-auto px-4 py-12 space-y-8">
+        <div class="soft-card rounded-2xl p-6 border border-pink-50">
+          <h2 class="text-2xl font-bold mb-3 text-gray-900">Manager+ ơi,</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Để nâng trải nghiệm Chạm Đất cùng Users, Customer 2H cập nhật quy
+            tắc tham gia cho các hoạt động offline dưới đây.
+          </p>
         </div>
-        <div class="space-y-5">
-          <article class="soft-card rounded-2xl p-5 border border-pink-50">
-            <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-              <div class="flex items-center gap-3">
-                <span
-                  class="px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                  >2024-12-12</span
-                >
-              </div>
-              <span class="text-xs uppercase tracking-widest text-pink-600"
-                >Mới</span
-              >
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Trang Nhật ký mới</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>
-                Thêm trang Nhật ký với layout Tailwind đồng bộ site chính.
-              </li>
-              <li>Thanh điều hướng có link Nhật ký để truy cập nhanh.</li>
-              <li>Hero dùng nền chung để giữ thống nhất.</li>
-            </ul>
-          </article>
 
-          <article class="soft-card rounded-2xl p-5 border border-pink-50">
-            <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-              <div class="flex items-center gap-3">
+        <article class="soft-card rounded-2xl p-6 border border-pink-50">
+          <div class="flex items-start gap-4">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 text-pink-700 font-bold text-lg"
+              >1</span
+            >
+            <div class="flex-1 space-y-3">
+              <div class="flex items-center justify-between flex-wrap gap-3">
+                <h3 class="text-xl font-semibold text-gray-900">
+                  Tạm biệt trạng thái “On-hold”
+                </h3>
                 <span
                   class="px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                  >2024-12-08</span
+                  >Áp dụng từ 15/12/2025</span
                 >
               </div>
-              <span class="text-xs uppercase tracking-widest text-pink-600"
-                >Cải tiến</span
-              >
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>
+                  <strong>Điểm mới:</strong> không cần chờ admin confirm, hệ
+                  thống tự động chuyển trạng thái “Need Action” khi session kết
+                  thúc.
+                </li>
+                <li>
+                  <strong>Điều kiện:</strong> manager+ cần
+                  <span class="text-pink-700 font-semibold"
+                    >có mặt trong 15 phút đầu</span
+                  >
+                  để được ghi nhận tham gia.
+                </li>
+                <li>
+                  Không ghi nhận có mặt nếu trễ hơn để đảm bảo hiệu quả cuộc trò
+                  chuyện của user và các managers khác.
+                </li>
+                <li>
+                  Thời gian áp dụng: sessions User Walk-In và User Immersion từ
+                  15/12/2025.
+                </li>
+              </ul>
             </div>
-            <h3 class="text-xl font-semibold mb-2">
-              Rút gọn nội dung trang chủ
-            </h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>Rút gọn hero, lý do và chỉ số để đọc nhanh hơn.</li>
-              <li>Bỏ bảng xếp hạng để tập trung nội dung chính.</li>
-              <li>Giữ nguyên CTA để đăng ký dễ dàng.</li>
-            </ul>
-          </article>
+          </div>
+        </article>
 
-          <article class="soft-card rounded-2xl p-5 border border-pink-50">
-            <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-              <div class="flex items-center gap-3">
+        <article class="soft-card rounded-2xl p-6 border border-pink-50">
+          <div class="flex items-start gap-4">
+            <span
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 text-pink-700 font-bold text-lg"
+              >2</span
+            >
+            <div class="flex-1 space-y-3">
+              <div class="flex items-center justify-between flex-wrap gap-3">
+                <h3 class="text-xl font-semibold text-gray-900">
+                  Tính năng mới: tự điều chỉnh lịch
+                </h3>
                 <span
                   class="px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                  >2024-12-02</span
+                  >Áp dụng từ 19/12/2025</span
                 >
               </div>
-              <span class="text-xs uppercase tracking-widest text-pink-600"
-                >Hình ảnh</span
-              >
+              <p class="text-gray-700">
+                Cho phép manager+ chủ động hủy, chỉnh lịch đã book mà không cần
+                Customer 2H hỗ trợ. Để đảm bảo chi phí vận hành, áp dụng trừ
+                phút khi hủy lịch:
+              </p>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Hủy trước T-2: không mất phút.</li>
+                <li>
+                  Hủy sau T-2: cần chuyển slot cho Manager khác để không bị trừ
+                  phút. Nếu không chuyển được
+                  <span class="text-pink-700 font-semibold"
+                    >-15 phút/lần hủy lịch</span
+                  >.
+                </li>
+                <li class="text-sm text-gray-600">
+                  (T là thời gian diễn ra session)
+                </li>
+              </ul>
+              <p class="text-gray-700">
+                Thời gian áp dụng: các sessions User Walk-In, User Immersion và
+                CS Shadowing diễn ra từ 19/12/2025.
+              </p>
             </div>
-            <h3 class="text-xl font-semibold mb-2">Nền hero mới</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>
-                Dùng <code>mainpage.png</code> làm nền hero với lớp gradient
-                nhẹ.
-              </li>
-              <li>Giữ chữ dễ đọc với lớp phủ mờ dần.</li>
-              <li>Đồng bộ hero với nút CTA và chip.</li>
-            </ul>
-          </article>
+          </div>
+        </article>
 
-          <article class="soft-card rounded-2xl p-5 border border-pink-50">
-            <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-              <div class="flex items-center gap-3">
-                <span
-                  class="px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                  >2024-11-20</span
-                >
-              </div>
-              <span class="text-xs uppercase tracking-widest text-pink-600"
-                >Phong cách</span
-              >
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Làm mới bảng màu</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>
-                Dùng bộ ba hồng (#F95396, #FF9DBE, #FEC8DC) cho thẻ, chip, nút.
-              </li>
-              <li>Điều chỉnh gradient và shadow cho đồng nhất.</li>
-            </ul>
-          </article>
-
-          <article class="soft-card rounded-2xl p-5 border border-pink-50">
-            <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-              <div class="flex items-center gap-3">
-                <span
-                  class="px-3 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-semibold"
-                  >2024-11-10</span
-                >
-              </div>
-              <span class="text-xs uppercase tracking-widest text-pink-600"
-                >Ra mắt</span
-              >
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Trang landing đầu tiên</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-              <li>
-                Ra mắt landing Customer 2H với hero, hoạt động, roadmap, chỉ số,
-                CTA phản hồi.
-              </li>
-              <li>Giới thiệu layout Tailwind và nhận diện gradient.</li>
-            </ul>
-          </article>
+        <div class="soft-card rounded-2xl p-6 border border-pink-50">
+          <p class="text-gray-700 mb-1">Trân trọng,</p>
+          <p class="text-gray-900 font-semibold">Customer 2H</p>
         </div>
       </section>
 
