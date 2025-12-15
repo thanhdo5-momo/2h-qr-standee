@@ -79,6 +79,35 @@
           ),
           url("./FOOTER.png") center bottom / cover no-repeat;
       }
+      .bar-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(90deg, #ff82b2 0%, #ff5fa3 100%);
+        color: #fff;
+        padding: 14px 20px;
+        border-radius: 999px;
+        box-shadow: 0 14px 35px rgba(249, 83, 150, 0.28);
+      }
+      .bar-pill .bars {
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 4px;
+      }
+      .bar-pill .bar {
+        width: 6px;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 999px;
+      }
+      .bar-pill .bar:nth-child(1) {
+        height: 16px;
+      }
+      .bar-pill .bar:nth-child(2) {
+        height: 24px;
+      }
+      .bar-pill .bar:nth-child(3) {
+        height: 16px;
+      }
     </style>
   </head>
   <body class="leading-normal tracking-normal gradient text-white min-h-screen">
@@ -185,11 +214,10 @@
           <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
           <div class="grid md:grid-cols-2 gap-8 mt-8">
             <div class="soft-card rounded-2xl p-6">
-              <h3 class="text-2xl font-semibold mb-3">
-                Lan toả tinh thần
-              </h3>
+              <h3 class="text-2xl font-semibold mb-3">Lan toả tinh thần</h3>
               <p class="text-gray-600 mb-5">
-                Chương trình tạo cơ hội giúp <strong>Managers+ tương tác với Users</strong>
+                Chương trình tạo cơ hội giúp
+                <strong>Managers+ tương tác với Users</strong>
                 ít nhất 2 giờ mỗi tháng qua các hoạt động thú vị
               </p>
               <ul class="space-y-3 text-gray-600">
@@ -206,31 +234,37 @@
                 </li>
               </ul>
             </div>
-            <div class="soft-card rounded-2xl p-6">
-              <h3 class="text-2xl font-semibold mb-3">
-                Định nghĩa của thành công
+            <div class="soft-card rounded-2xl p-6 text-center">
+              <h3 class="text-2xl font-semibold mb-2 text-gray-800">
+                Thành quả tháng 11
               </h3>
-              <p class="text-gray-600 mb-4">
-                Sản phẩm tốt hơn, hành trình mượt hơn, và văn hóa lắng nghe
-                khách hàng.
+              <p class="text-pink-600 font-semibold text-lg">
+                Số phút chạm User của toàn công ty
               </p>
-              <div class="grid grid-cols-3 gap-4 text-center">
-                <div class="p-4 rounded-xl bg-pink-50">
-                  <div class="text-2xl font-bold text-pink-600">100%</div>
-                  <div class="text-xs text-gray-600">
-                    Managers đạt 120 phút/tháng
-                  </div>
+              <div class="flex justify-center mt-4 mb-4">
+                <div class="bar-pill">
+                  <span class="bars">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                  </span>
+                  <span class="text-2xl font-extrabold tracking-tight">
+                    22,431 phút
+                  </span>
+                  <span class="bars">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                  </span>
                 </div>
-                <div class="p-4 rounded-xl bg-pink-50">
-                  <div class="text-2xl font-bold text-pink-600">30%+</div>
-                  <div class="text-xs text-gray-600">
-                    Insights chuyển đổi thành Actions
-                  </div>
-                </div>
-                <div class="p-4 rounded-xl bg-pink-50">
-                  <div class="text-2xl font-bold text-pink-600">4.0★</div>
-                  <div class="text-xs text-gray-600">Tỷ lệ hài lòng</div>
-                </div>
+              </div>
+              <p class="text-base text-gray-700">
+                Gấp 400 lần thời gian ánh sáng từ Trái Đất đến Sao Thổ
+              </p>
+              <div
+                class="mt-4 inline-block bg-pink-50 text-pink-700 font-bold px-4 py-2 rounded-xl shadow">
+                <span class="block md:inline">Tốc độ cảm User</span>
+                <span class="block md:inline md:ml-1">Vượt Xa Ánh Sáng!</span>
               </div>
             </div>
           </div>
@@ -436,6 +470,38 @@
                 ">
                 <div class="md:w-1/3">
                   <img
+                    src="./user_feedback/10.png"
+                    alt="Anh Nguyễn Khánh Toàn"
+                    class="w-full h-full object-cover" />
+                </div>
+                <div class="md:w-2/3 p-6 md:p-8 flex flex-col gap-3">
+                  <div>
+                    <h3 class="text-2xl md:text-1xl font-bold text-gray-900">
+                      Chị Trịnh Thu Ngọc
+                    </h3>
+                    <p class="text-pink-600 font-semibold">
+                      Head of Product, Payment
+                    </p>
+                  </div>
+                  <p class="text-gray-700 leading-relaxed text-sm">
+                    <strong>Đồng cảm - "Ngứa nghề" - Trách nhiệm.</strong>
+                    <br />
+                    Sau hai buổi CS shadowing, tôi thực sự cảm thấy vừa thương
+                    khách hàng, vừa thương cả đội ngũ CS - những người đang miệt
+                    mài chăm sóc khách hàng mỗi ngày nhưng lại thiếu công cụ lẫn
+                    quyền hạn để thật sự làm tốt điều mà họ khao khát mang đến.
+                  </p>
+                </div>
+              </article>
+              <article
+                class="soft-card rounded-3xl overflow-hidden flex flex-col md:flex-row bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                style="
+                  min-width: 320px;
+                  width: calc(50% - 12px);
+                  max-width: 640px;
+                ">
+                <div class="md:w-1/3">
+                  <img
                     src="./user_feedback/9.png"
                     alt="Chị Trịnh Thu Ngọc"
                     class="w-full h-full object-cover" />
@@ -450,11 +516,12 @@
                     </p>
                   </div>
                   <p class="text-gray-700 leading-relaxed text-sm">
-                    Bất ngờ - Thú Vị - Học hỏi được nhiều. Mỗi lần gặp user là 1
-                    lần bất ngờ, cuộc sống thật đa dạng. Mình cũng sẽ hiểu hơn
-                    về cách nhìn và nhu cầu của user đối với các sản phẩm của
-                    chúng ta. Họ cũng có thể cho chúng ta các gợi ý về việc điều
-                    chỉnh/phát triển sản phẩm.
+                    <strong>Bất ngờ - Thú Vị - Học hỏi được nhiều. </strong
+                    ><br />
+                    Mỗi lần gặp user là 1 lần bất ngờ, cuộc sống thật đa dạng.
+                    Mình cũng sẽ hiểu hơn về cách nhìn và nhu cầu của user đối
+                    với các sản phẩm của chúng ta. Họ cũng có thể cho chúng ta
+                    các gợi ý về việc điều chỉnh/phát triển sản phẩm.
                   </p>
                 </div>
               </article>
@@ -479,11 +546,11 @@
                     <p class="text-pink-600 font-semibold">Manager - BMC</p>
                   </div>
                   <p class="text-gray-700 leading-relaxed text-sm">
-                    Gần dân – Thử dân – Vì dân. Cho dân coi trước, cho sếp duyệt
-                    sau - Cook trên màn hình ít thôi, mang tagline/concept ra
-                    test xem dân hiểu gì, thích gì, rớt chỗ nào (thường là rớt).
-                    Nếp mới của Huy: Đầu tuần làm cho xong, cuối tuần hỏi cho
-                    chắc.
+                    <strong>Gần dân – Thử dân – Vì dân. </strong><br />
+                    Cho dân coi trước, cho sếp duyệt sau - Cook trên màn hình ít
+                    thôi, mang tagline/concept ra test xem dân hiểu gì, thích
+                    gì, rớt chỗ nào (thường là rớt). Nếp mới của Huy: Đầu tuần
+                    làm cho xong, cuối tuần hỏi cho chắc.
                   </p>
                 </div>
               </article>
