@@ -438,6 +438,7 @@
                   </div>
                 </div>
                 <div
+                  id="guideline-stage"
                   class="rounded-2xl overflow-hidden bg-pink-50 border border-pink-100 flex items-center justify-center md:h-96">
                   <img
                     id="guideline-image"
@@ -942,6 +943,7 @@
       const guidelineDots = document.getElementById("guideline-dots");
       const guidelinePrev = document.getElementById("guideline-prev");
       const guidelineNext = document.getElementById("guideline-next");
+      const guidelineStage = document.getElementById("guideline-stage");
 
       if (
         guidelineImage &&
@@ -987,6 +989,35 @@
 
         guidelinePrev.addEventListener("click", () => goTo(index - 1));
         guidelineNext.addEventListener("click", () => goTo(index + 1));
+
+        // Swipe support
+        if (guidelineStage) {
+          let touchStartX = null;
+          guidelineStage.addEventListener(
+            "touchstart",
+            (e) => {
+              touchStartX = e.touches[0].clientX;
+            },
+            { passive: true }
+          );
+          guidelineStage.addEventListener(
+            "touchend",
+            (e) => {
+              if (touchStartX === null) return;
+              const deltaX = e.changedTouches[0].clientX - touchStartX;
+              const threshold = 40;
+              if (Math.abs(deltaX) > threshold) {
+                if (deltaX < 0) {
+                  goTo(index + 1);
+                } else {
+                  goTo(index - 1);
+                }
+              }
+              touchStartX = null;
+            },
+            { passive: true }
+          );
+        }
 
         render();
       }
