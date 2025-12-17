@@ -380,7 +380,7 @@
 
       <!-- How it works -->
       <section id="how-it-works" class="bg-white py-12 border-b">
-        <div class="container max-w-5xl mx-auto px-4">
+        <div class="container max-w-8xl mx-auto px-4">
           <h2 class="text-4xl font-bold text-center">
             Cách chương trình Customer 2H vận hành
           </h2>
@@ -391,64 +391,105 @@
           </p>
           <div class="mt-10">
             <div class="soft-card rounded-3xl p-4 md:p-6 h-full bg-white">
-              <div class="flex flex-col gap-4">
-                <div class="flex items-center justify-between">
-                  <div
-                    id="guideline-counter"
-                    class="text-sm font-semibold text-pink-600">
-                    1 / 5
-                  </div>
-                  <div class="flex gap-2">
-                    <button
-                      id="guideline-prev"
-                      type="button"
-                      class="guideline-nav-btn"
-                      aria-label="Xem ảnh trước">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                    <button
-                      id="guideline-next"
-                      type="button"
-                      class="guideline-nav-btn"
-                      aria-label="Xem ảnh tiếp theo">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+              <div class="relative max-w-8xl mx-auto">
+                <button
+                  id="guideline-prev"
+                  class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white shadow absolute left-0 top-1/2 transform -translate-y-1/2 border border-pink-200 text-pink-600 hover:bg-pink-50 focus:outline-none"
+                  aria-label="Xem ảnh trước">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
                 <div
-                  id="guideline-stage"
-                  class="rounded-2xl overflow-hidden bg-pink-50 border border-pink-100 flex items-center justify-center md:h-96">
-                  <img
-                    id="guideline-image"
-                    src="./guideline/guideline_1.png"
-                    alt="Chọn hoạt động"
-                    class="w-full h-full object-contain" />
+                  id="guideline-carousel"
+                  class="flex gap-6 overflow-x-auto no-scrollbar py-2 px-2 md:px-12">
+                  <article
+                    class="soft-card rounded-3xl overflow-hidden flex flex-col bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                    style="
+                      min-width: 320px;
+                      width: calc(50% - 12px);
+                      max-width: 640px;
+                    ">
+                    <img
+                      src="./guideline/guideline_1.png"
+                      alt="Chọn hoạt động"
+                      class="w-full h-full object-contain bg-pink-50" />
+                  </article>
+                  <article
+                    class="soft-card rounded-3xl overflow-hidden flex flex-col bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                    style="
+                      min-width: 320px;
+                      width: calc(50% - 12px);
+                      max-width: 640px;
+                    ">
+                    <img
+                      src="./guideline/guideline_2.png"
+                      alt="Nhận nhắc lịch"
+                      class="w-full h-full object-contain bg-pink-50" />
+                  </article>
+                  <article
+                    class="soft-card rounded-3xl overflow-hidden flex flex-col bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                    style="
+                      min-width: 320px;
+                      width: calc(50% - 12px);
+                      max-width: 640px;
+                    ">
+                    <img
+                      src="./guideline/guideline_3.png"
+                      alt="Trải nghiệm"
+                      class="w-full h-full object-contain bg-pink-50" />
+                  </article>
+                  <article
+                    class="soft-card rounded-3xl overflow-hidden flex flex-col bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                    style="
+                      min-width: 320px;
+                      width: calc(50% - 12px);
+                      max-width: 640px;
+                    ">
+                    <img
+                      src="./guideline/guideline_4.png"
+                      alt="Ghi nhận"
+                      class="w-full h-full object-contain bg-pink-50" />
+                  </article>
+                  <article
+                    class="soft-card rounded-3xl overflow-hidden flex flex-col bg-gradient-to-r from-pink-50 via-white to-pink-50 flex-shrink-0"
+                    style="
+                      min-width: 320px;
+                      width: calc(50% - 12px);
+                      max-width: 640px;
+                    ">
+                    <img
+                      src="./guideline/guideline_5.png"
+                      alt="Chia sẻ & follow-up"
+                      class="w-full h-full object-contain bg-pink-50" />
+                  </article>
                 </div>
-                <div
-                  id="guideline-dots"
-                  class="flex justify-center gap-2"></div>
+                <button
+                  id="guideline-next"
+                  class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white shadow absolute right-0 top-1/2 transform -translate-y-1/2 border border-pink-200 text-pink-600 hover:bg-pink-50 focus:outline-none"
+                  aria-label="Xem ảnh tiếp theo">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -919,107 +960,29 @@
         });
       }
 
-      // How it works carousel
-      const guidelineData = [
-        {
-          image: "./guideline/guideline_1.png",
-        },
-        {
-          image: "./guideline/guideline_2.png",
-        },
-        {
-          image: "./guideline/guideline_3.png",
-        },
-        {
-          image: "./guideline/guideline_4.png",
-        },
-        {
-          image: "./guideline/guideline_5.png",
-        },
-      ];
-
-      const guidelineImage = document.getElementById("guideline-image");
-      const guidelineCounter = document.getElementById("guideline-counter");
-      const guidelineDots = document.getElementById("guideline-dots");
+      // How it works carousel (matching voices)
+      const guidelineCarousel = document.getElementById("guideline-carousel");
       const guidelinePrev = document.getElementById("guideline-prev");
       const guidelineNext = document.getElementById("guideline-next");
-      const guidelineStage = document.getElementById("guideline-stage");
-
-      if (
-        guidelineImage &&
-        guidelineCounter &&
-        guidelineDots &&
-        guidelinePrev &&
-        guidelineNext
-      ) {
-        let index = 0;
-
-        const updateDots = () => {
-          const dots = guidelineDots.querySelectorAll(".guideline-dot");
-          dots.forEach((dot, idx) => {
-            dot.classList.toggle("active", idx === index);
+      if (guidelineCarousel && guidelinePrev && guidelineNext) {
+        const getScrollAmount = () => {
+          const card = guidelineCarousel.querySelector("article");
+          const gap = 24; // gap-6
+          const cardWidth = card ? card.getBoundingClientRect().width : 480;
+          return cardWidth + gap;
+        };
+        guidelinePrev.addEventListener("click", () => {
+          guidelineCarousel.scrollBy({
+            left: -getScrollAmount(),
+            behavior: "smooth",
           });
-        };
-
-        const render = () => {
-          const current = guidelineData[index];
-          guidelineImage.src = current.image;
-          guidelineImage.alt = current.title;
-          guidelineCounter.textContent = `${index + 1} / ${
-            guidelineData.length
-          }`;
-          updateDots();
-        };
-
-        const goTo = (targetIndex) => {
-          const length = guidelineData.length;
-          index = ((targetIndex % length) + length) % length;
-          render();
-        };
-
-        // Build dots once
-        guidelineData.forEach((item, idx) => {
-          const dot = document.createElement("button");
-          dot.type = "button";
-          dot.className = "guideline-dot";
-          dot.setAttribute("aria-label", item.title);
-          dot.addEventListener("click", () => goTo(idx));
-          guidelineDots.appendChild(dot);
         });
-
-        guidelinePrev.addEventListener("click", () => goTo(index - 1));
-        guidelineNext.addEventListener("click", () => goTo(index + 1));
-
-        // Swipe support
-        if (guidelineStage) {
-          let touchStartX = null;
-          guidelineStage.addEventListener(
-            "touchstart",
-            (e) => {
-              touchStartX = e.touches[0].clientX;
-            },
-            { passive: true }
-          );
-          guidelineStage.addEventListener(
-            "touchend",
-            (e) => {
-              if (touchStartX === null) return;
-              const deltaX = e.changedTouches[0].clientX - touchStartX;
-              const threshold = 40;
-              if (Math.abs(deltaX) > threshold) {
-                if (deltaX < 0) {
-                  goTo(index + 1);
-                } else {
-                  goTo(index - 1);
-                }
-              }
-              touchStartX = null;
-            },
-            { passive: true }
-          );
-        }
-
-        render();
+        guidelineNext.addEventListener("click", () => {
+          guidelineCarousel.scrollBy({
+            left: getScrollAmount(),
+            behavior: "smooth",
+          });
+        });
       }
 
       // Voices manual scroll
