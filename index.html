@@ -108,6 +108,35 @@
       .bar-pill .bar:nth-child(3) {
         height: 16px;
       }
+      .guideline-nav-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid #fce0ec;
+        background: #fff;
+        color: #f95396;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(249, 83, 150, 0.14);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .guideline-nav-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 30px rgba(249, 83, 150, 0.16);
+      }
+      .guideline-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: #fce0ec;
+        transition: all 0.2s ease;
+      }
+      .guideline-dot.active {
+        width: 22px;
+        background: #f95396;
+        box-shadow: 0 8px 20px rgba(249, 83, 150, 0.15);
+      }
     </style>
   </head>
   <body class="leading-normal tracking-normal gradient text-white min-h-screen">
@@ -345,6 +374,82 @@
               <h3 class="text-xl font-semibold mt-1">User Walk In</h3>
               <p class="text-gray-600 mt-2">Gặp gỡ user tại văn phòng MoMo</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how-it-works" class="bg-white py-12 border-b">
+        <div class="container max-w-5xl mx-auto px-4">
+          <h2 class="text-4xl font-bold text-center">
+            Cách chương trình Customer 2H vận hành
+          </h2>
+          <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
+          <p class="text-center text-gray-600 max-w-3xl mx-auto">
+            Xem nhanh hành trình từ lúc đăng ký đến khi hoàn tất ghi nhận để mọi
+            người cùng thấu cảm khách hàng và biến insight thành hành động.
+          </p>
+          <div class="mt-10">
+            <div class="soft-card rounded-3xl p-4 md:p-6 h-full bg-white">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div
+                    id="guideline-counter"
+                    class="text-sm font-semibold text-pink-600">
+                    1 / 5
+                  </div>
+                  <div class="flex gap-2">
+                    <button
+                      id="guideline-prev"
+                      type="button"
+                      class="guideline-nav-btn"
+                      aria-label="Xem ảnh trước">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      id="guideline-next"
+                      type="button"
+                      class="guideline-nav-btn"
+                      aria-label="Xem ảnh tiếp theo">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="rounded-2xl overflow-hidden bg-pink-50 border border-pink-100 flex items-center justify-center md:h-96">
+                  <img
+                    id="guideline-image"
+                    src="./guideline/guideline_1.png"
+                    alt="Chọn hoạt động"
+                    class="w-full h-full object-contain" />
+                </div>
+                <div
+                  id="guideline-dots"
+                  class="flex justify-center gap-2"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -811,6 +916,79 @@
           `;
           leaderboardBody.appendChild(tr);
         });
+      }
+
+      // How it works carousel
+      const guidelineData = [
+        {
+          image: "./guideline/guideline_1.png",
+        },
+        {
+          image: "./guideline/guideline_2.png",
+        },
+        {
+          image: "./guideline/guideline_3.png",
+        },
+        {
+          image: "./guideline/guideline_4.png",
+        },
+        {
+          image: "./guideline/guideline_5.png",
+        },
+      ];
+
+      const guidelineImage = document.getElementById("guideline-image");
+      const guidelineCounter = document.getElementById("guideline-counter");
+      const guidelineDots = document.getElementById("guideline-dots");
+      const guidelinePrev = document.getElementById("guideline-prev");
+      const guidelineNext = document.getElementById("guideline-next");
+
+      if (
+        guidelineImage &&
+        guidelineCounter &&
+        guidelineDots &&
+        guidelinePrev &&
+        guidelineNext
+      ) {
+        let index = 0;
+
+        const updateDots = () => {
+          const dots = guidelineDots.querySelectorAll(".guideline-dot");
+          dots.forEach((dot, idx) => {
+            dot.classList.toggle("active", idx === index);
+          });
+        };
+
+        const render = () => {
+          const current = guidelineData[index];
+          guidelineImage.src = current.image;
+          guidelineImage.alt = current.title;
+          guidelineCounter.textContent = `${index + 1} / ${
+            guidelineData.length
+          }`;
+          updateDots();
+        };
+
+        const goTo = (targetIndex) => {
+          const length = guidelineData.length;
+          index = ((targetIndex % length) + length) % length;
+          render();
+        };
+
+        // Build dots once
+        guidelineData.forEach((item, idx) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "guideline-dot";
+          dot.setAttribute("aria-label", item.title);
+          dot.addEventListener("click", () => goTo(idx));
+          guidelineDots.appendChild(dot);
+        });
+
+        guidelinePrev.addEventListener("click", () => goTo(index - 1));
+        guidelineNext.addEventListener("click", () => goTo(index + 1));
+
+        render();
       }
 
       // Voices manual scroll
