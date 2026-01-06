@@ -319,6 +319,28 @@
         </div>
       </section>
 
+      <!-- TV Leaderboard Nov -->
+      <section id="tv-leaderboard" class="bg-gray-50 py-12 border-b">
+        <div class="container max-w-5xl mx-auto px-4">
+          <h2 class="text-4xl font-bold text-center">TV Leaderboard Nov</h2>
+          <div class="h-1 mx-auto gradient w-32 opacity-25 my-4 rounded"></div>
+          <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
+            Xem lại video TV Leaderboard tháng 11.
+          </p>
+          <div
+            class="relative w-full overflow-hidden rounded-3xl shadow-2xl"
+            style="padding-top: 56.25%">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/56PKT4H7Bt0?rel=0"
+              title="TV Leaderboard Nov"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
       <!-- Activities -->
       <section id="activities" class="bg-gray-50 py-12 border-b">
         <div class="container max-w-8xl mx-auto px-4">
@@ -1028,23 +1050,27 @@
           e.preventDefault();
           const email = subscribeEmail.value.trim();
           if (!email) {
-            alert("Please enter your email.");
+            alert("Vui lòng nhập email hợp lệ để đăng ký.");
             return;
           }
+
+          const formId =
+            "1FAIpQLSdZdBHMN2nxELouL75BlxiFNdjpFtLiu6angx2A0cd39vcOVw";
+          const formUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+          const formData = new FormData();
+          formData.append("entry.470658052", email);
+
           try {
-            const response = await fetch("/subscribe", {
+            await fetch(formUrl, {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ email }),
+              mode: "no-cors",
+              body: formData,
             });
-            if (!response.ok) {
-              throw new Error(`Request failed: ${response.status}`);
-            }
-            alert(`Thank you for subscribing, ${email}!`);
+            alert(`Cảm ơn bạn đã đăng ký, ${email}!`);
             subscribeForm.reset();
-          } catch (err) {
-            console.error("Subscription failed:", err);
-            alert("Could not save your subscription. Please try again later.");
+          } catch (error) {
+            console.error("Subscribe error:", error);
+            alert("Có lỗi xảy ra khi đăng ký. Vui lòng thử lại sau.");
           }
         });
       }
