@@ -1015,15 +1015,28 @@
       const subscribeEmail = document.getElementById("subscribe-email");
       const subscribeToast = document.getElementById("subscribe-toast");
       if (subscribeForm && subscribeEmail) {
-        subscribeForm.addEventListener("submit", (e) => {
+        subscribeForm.addEventListener("submit", async (e) => {
           e.preventDefault();
           const email = subscribeEmail.value.trim();
-          alert(
-            email
-              ? `Thank you for subscribing, ${email}!`
-              : "Thank you for subscribing!"
-          );
-          subscribeForm.reset();
+          if (!email) {
+            alert("Please enter your email.");
+            return;
+          }
+          try {
+            const response = await fetch("/subscribe", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email }),
+            });
+            if (!response.ok) {
+              throw new Error(`Request failed: ${response.status}`);
+            }
+            alert(`Thank you for subscribing, ${email}!`);
+            subscribeForm.reset();
+          } catch (err) {
+            console.error("Subscription failed:", err);
+            alert("Could not save your subscription. Please try again later.");
+          }
         });
       }
     </script>
